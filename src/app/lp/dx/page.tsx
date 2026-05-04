@@ -248,6 +248,19 @@ export default function DxLpPage() {
         </div>
       </section>
 
+      {/* 限定枠プログレスバー */}
+      <section className="bg-[#0d2a52] py-4">
+        <div className="max-w-xl mx-auto px-4 text-center">
+          <p className="text-white text-sm font-bold mb-2">
+            🔥 限定10社 — 現在 <span className="text-[#f0d87a]">4社決定済み</span>・残り <span className="text-[#f0d87a]">6社</span>
+          </p>
+          <div className="w-full bg-white/20 rounded-full h-2.5">
+            <div className="bg-[#c9a227] h-2.5 rounded-full" style={{ width: "40%" }} />
+          </div>
+          <p className="text-blue-300 text-xs mt-1.5">4 / 10社 受付済み</p>
+        </div>
+      </section>
+
       {/* Problem */}
       <section className="bg-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">

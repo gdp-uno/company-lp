@@ -9,12 +9,11 @@ export default function Footer() {
           <div>
             <div className="mb-3">
               <Image
-                src="/logo-black.png"
+                src="/logo-white.png"
                 alt="Growth Design Partners"
                 width={160}
                 height={41}
                 className="h-7 w-auto"
-                style={{ filter: "invert(1)" }}
               />
             </div>
             <p className="text-blue-200 text-sm leading-relaxed">

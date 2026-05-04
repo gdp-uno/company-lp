@@ -12,12 +12,11 @@ export default function Header() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo-black.png"
+            src="/logo-white.png"
             alt="Growth Design Partners"
             width={180}
             height={46}
             className="h-8 w-auto"
-            style={{ filter: "invert(1)" }}
             priority
           />
         </Link>
