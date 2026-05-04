@@ -14,11 +14,20 @@
   --color-gold-400: #d4b444;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-zen-kaku), 'Hiragino Kaku Gothic Pro', system-ui, sans-serif;
+  --font-plex: var(--font-ibm-plex-sans), system-ui, sans-serif;
+  --font-plex-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
 }
 
 html {
   scroll-behavior: smooth;
 }
+
+::selection { background: #c9a227; color: #0a1f3d; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #f0f6fc; }
+::-webkit-scrollbar-thumb { background: #15447b; border: 2px solid #f0f6fc; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #c9a227; }
 
 body {
   background: #ffffff;
