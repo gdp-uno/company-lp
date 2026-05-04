@@ -393,26 +393,26 @@ function Plans() {
   const spots = [
     {
       code: "DIAGNOSIS", name: "業務診断", price: "200,000",
-      desc: "1〜2週間。業務棚卸し＆改善ロードマップ。",
+      desc: "約0.5ヶ月・15時間。業務棚卸し＆改善ロードマップ。",
       items: ["業務フロー可視化", "自動化候補リスト", "改善優先度マップ"],
     },
     {
-      code: "BUILD", name: "仕組み構築", price: "600,000",
-      desc: "1〜2ヶ月。1業務領域を完全に仕組み化。",
+      code: "BUILD", name: "仕組み構築", price: "450,000",
+      desc: "0.5〜1.0ヶ月・35時間。複数の既存業務を効率化。",
       items: ["ツール選定・初期設定", "業務マニュアル一式", "1ヶ月の運用フォロー"],
       featured: true,
     },
     {
-      code: "REBUILD", name: "全社DX再設計", price: "1,200,000",
-      desc: "3ヶ月。基幹業務を横断的に再設計。",
+      code: "REBUILD", name: "全社DX再設計", price: "900,000",
+      desc: "1.5〜2.0ヶ月・75時間。部門・組織全体を再設計。",
       items: ["全社業務フロー再設計", "5領域のツール構築", "3ヶ月の運用伴走"],
     },
   ];
   const subs = [
     { code: "LIGHT", name: "ライト伴走", price: "50,000", items: ["月1回 戦略MTG", "ツール質問チャット", "月次レポート"] },
     { code: "STANDARD", name: "スタンダード伴走", price: "120,000", items: ["月2回 戦略MTG", "1業務領域の改善", "ドキュメント更新"], featured: true },
-    { code: "PRO", name: "プロ伴走", price: "240,000", items: ["週1回 戦略MTG", "複数業務の並行改善", "優先サポート"] },
-    { code: "ENTERPRISE", name: "経営パートナー", price: "ASK", items: ["週2回 経営MTG", "全社DX伴走", "専任チーム配置"] },
+    { code: "PRO", name: "プロ伴走", price: "300,000", items: ["週1回 戦略MTG", "複数業務の並行改善", "優先サポート"] },
+    { code: "ENTERPRISE", name: "経営パートナー", price: "500,000", items: ["週2回 経営MTG", "全社DX伴走", "専任チーム配置"] },
   ];
 
   return (
@@ -715,8 +715,8 @@ function CTA() {
                 className="w-full bg-white border-2 border-[#e2e8f0] focus:border-[#15447b] text-[#0a1f3d] px-4 h-12 text-[14px] outline-none transition rounded-xl">
                 <option value="">まだ決めていない</option>
                 <option value="業務診断（¥200,000〜）">業務診断（¥200,000〜）</option>
-                <option value="仕組み構築（¥600,000〜）">仕組み構築（¥600,000〜）</option>
-                <option value="全社DX再設計（¥1,200,000〜）">全社DX再設計（¥1,200,000〜）</option>
+                <option value="仕組み構築（¥450,000〜）">仕組み構築（¥450,000〜）</option>
+                <option value="全社DX再設計（¥900,000〜）">全社DX再設計（¥900,000〜）</option>
                 <option value="月額伴走（¥50,000〜/月）">月額伴走（¥50,000〜/月）</option>
               </select>
             </div>
