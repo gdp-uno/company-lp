@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function DxHeader() {
   const [scrolled, setScrolled] = useState(false);
@@ -20,16 +19,14 @@ export default function DxHeader() {
       }`}
     >
       <div className="max-w-[1280px] mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
-        <Link href="/" aria-label="Growth Design Partners">
-          <Image
-            src="/logo-color.png"
-            alt="Growth Design Partners"
-            width={180}
-            height={46}
-            className="h-8 w-auto"
-            priority
-          />
-        </Link>
+        <Image
+          src="/logo-color.png"
+          alt="Growth Design Partners"
+          width={180}
+          height={46}
+          className="h-8 w-auto"
+          priority
+        />
         <nav className="hidden lg:flex items-center gap-7 text-[13px] text-[#0a1f3d]/75 font-medium">
           <a href="#problem" className="hover:text-[#15447b] transition-colors">課題</a>
           <a href="#solution" className="hover:text-[#15447b] transition-colors">解決策</a>
