@@ -1,26 +1,76 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
+  --color-navy-950: #0a1f3d;
+  --color-navy-900: #0d2a52;
+  --color-navy-800: #103566;
+  --color-navy-700: #15447b;
+  --color-navy-600: #1a5494;
+  --color-navy-500: #2065ad;
+  --color-navy-400: #4a85c4;
+  --color-navy-100: #ddeaf8;
+  --color-navy-50: #f0f6fc;
+  --color-gold-500: #c9a227;
+  --color-gold-400: #d4b444;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-zen-kaku), 'Hiragino Kaku Gothic Pro', system-ui, sans-serif;
+  --font-plex: var(--font-ibm-plex-sans), system-ui, sans-serif;
+  --font-plex-mono: var(--font-ibm-plex-mono), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
+
+::selection { background: #c9a227; color: #0a1f3d; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #f0f6fc; }
+::-webkit-scrollbar-thumb { background: #15447b; border: 2px solid #f0f6fc; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #c9a227; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #1a1a2e;
+  font-family: var(--font-geist-sans), 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: #15447b;
+  line-height: 1.3;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #15447b;
+  color: #fff;
+  padding: 0.875rem 2.5rem;
+  border-radius: 0.375rem;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background: #1a5494;
+}
+
+.btn-cta {
+  display: inline-block;
+  background: #c9a227;
+  color: #fff;
+  padding: 1rem 3rem;
+  border-radius: 0.375rem;
+  font-weight: 700;
+  font-size: 1.125rem;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.btn-cta:hover {
+  background: #d4b444;
 }
