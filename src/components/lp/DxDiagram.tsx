@@ -48,7 +48,7 @@ export default function DxDiagram() {
           </div>
           <div className="mt-4 pt-3 border-t-2 border-dashed border-[#cbd5e1]">
             <div className="font-plex-mono text-[9px] text-[#64748b]">月の合計工数</div>
-            <div className="font-display font-black text-[#475569] text-[28px] tabular-nums leading-none">
+            <div className="font-plex font-black text-[#475569] text-[28px] tabular-nums leading-none">
               84<span className="text-[12px] font-bold text-[#94a3b8] ml-1">時間</span>
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function DxDiagram() {
           </div>
           <div className="mt-4 pt-3 border-t-2 border-dashed border-[#c9a227]">
             <div className="font-plex-mono text-[9px] text-[#dc2626]">月の削減工数</div>
-            <div className="font-display font-black text-[#dc2626] text-[28px] tabular-nums leading-none">
+            <div className="font-plex font-black text-[#dc2626] text-[28px] tabular-nums leading-none">
               -72<span className="text-[12px] font-bold text-[#dc2626]/70 ml-1">時間</span>
             </div>
           </div>

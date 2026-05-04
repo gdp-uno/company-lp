@@ -198,7 +198,7 @@ function SeatBar() {
         </div>
         <div className="text-right border-l border-white/15 pl-6">
           <div className="font-plex-mono text-[10px] tracking-[0.25em] text-[#fbbf24] mb-0.5">残り</div>
-          <div className="font-display font-black text-[#fbbf24] text-[44px] sm:text-[56px] tabular-nums leading-none drop-shadow-[0_0_24px_rgba(251,191,36,0.4)]">
+          <div className="font-plex font-black text-[#fbbf24] text-[44px] sm:text-[56px] tabular-nums leading-none drop-shadow-[0_0_24px_rgba(251,191,36,0.4)]">
             6<span className="text-lg font-bold text-white/80 ml-1">社</span>
           </div>
         </div>
@@ -232,7 +232,7 @@ function Problem() {
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {PROBLEMS.map((p, i) => (
             <div key={i} className="relative bg-[#f8fafc] border-2 border-[#e2e8f0] hover:border-[#15447b] hover:bg-white transition-all rounded-2xl p-6 group">
-              <div className="absolute -top-3 -left-3 w-9 h-9 bg-gradient-to-br from-[#15447b] to-[#0a1f3d] text-white rounded-full flex items-center justify-center font-display font-black text-[14px] tabular-nums shadow-md">
+              <div className="absolute -top-3 -left-3 w-9 h-9 bg-gradient-to-br from-[#15447b] to-[#0a1f3d] text-white rounded-full flex items-center justify-center font-plex font-black text-[14px] tabular-nums shadow-md">
                 {String(i + 1).padStart(2, "0")}
               </div>
               <div className="flex items-start gap-4 pl-3">
@@ -293,12 +293,12 @@ function Solution() {
                 </div>
               )}
               <div className="relative bg-white rounded-3xl p-7 lg:p-9 shadow-xl border border-[#15447b]/10 h-full overflow-hidden">
-                <div className="absolute -top-4 -right-2 font-display font-black text-[#15447b]/[0.06] text-[140px] leading-none tabular-nums select-none">{s.n}</div>
+                <div className="absolute -top-4 -right-2 font-plex font-black text-[#15447b]/[0.06] text-[140px] leading-none tabular-nums select-none">{s.n}</div>
                 <div className="relative">
                   <div className="flex items-center gap-3 mb-5">
                     <div className="flex flex-col items-center justify-center w-14 h-14 bg-gradient-to-br from-[#15447b] to-[#0a1f3d] text-white rounded-2xl shadow-lg">
                       <span className="font-plex-mono text-[8px] tracking-widest opacity-70 leading-none">STEP</span>
-                      <span className="font-display font-black text-[18px] tabular-nums leading-none mt-0.5">{s.n}</span>
+                      <span className="font-plex font-black text-[18px] tabular-nums leading-none mt-0.5">{s.n}</span>
                     </div>
                     <div>
                       <div className="font-plex-mono text-[10px] tracking-[0.2em] text-[#dc2626] font-bold">{s.days}</div>
@@ -371,13 +371,13 @@ function WhyUs() {
               <div className="flex items-baseline justify-between mb-5">
                 <div className="inline-flex items-center gap-2 bg-[#15447b] text-white px-3 py-1 rounded-full">
                   <span className="font-plex-mono text-[10px] tracking-widest font-bold">REASON</span>
-                  <span className="font-display font-black text-[14px] tabular-nums">{r.n}</span>
+                  <span className="font-plex font-black text-[14px] tabular-nums">{r.n}</span>
                 </div>
               </div>
               <h3 className="font-display font-bold text-[#0a1f3d] text-[19px] sm:text-[20px] leading-[1.45] mb-3">{r.title}</h3>
               <p className="text-[13.5px] text-[#475569] leading-[1.95] mb-5">{r.desc}</p>
               <div className="pt-5 border-t border-[#e2e8f0] flex items-baseline gap-3">
-                <span className="font-display font-black text-[#dc2626] text-[32px] tabular-nums leading-none">{r.stat}</span>
+                <span className="font-plex font-black text-[#dc2626] text-[32px] tabular-nums leading-none">{r.stat}</span>
                 <span className="font-plex-mono text-[11px] tracking-wider text-[#64748b] font-medium">{r.statL}</span>
               </div>
             </div>
@@ -457,7 +457,7 @@ function Plans() {
                 <p className="text-[13px] text-[#475569] leading-[1.85] mb-5 min-h-[3.5em]">{s.desc}</p>
                 <div className="pb-5 mb-5 border-b border-[#e2e8f0]">
                   <span className="text-[12px] text-[#64748b] mr-1">¥</span>
-                  <span className="font-display font-black text-[#0a1f3d] text-[40px] tabular-nums">{s.price}</span>
+                  <span className="font-plex font-black text-[#0a1f3d] text-[40px] tabular-nums">{s.price}</span>
                   <span className="text-[12px] text-[#64748b] ml-1">〜（税別）</span>
                 </div>
                 <ul className="space-y-2.5 mb-7">
@@ -514,7 +514,7 @@ function Plans() {
                   ) : (
                     <>
                       <span className={`text-[12px] mr-1 ${s.featured ? "text-white/60" : "text-[#64748b]"}`}>¥</span>
-                      <span className={`font-display font-black tabular-nums ${s.featured ? "text-white text-[40px]" : "text-[#0a1f3d] text-[36px]"}`}>{s.price}</span>
+                      <span className={`font-plex font-black tabular-nums ${s.featured ? "text-white text-[40px]" : "text-[#0a1f3d] text-[36px]"}`}>{s.price}</span>
                       <span className={`text-[12px] ml-1 ${s.featured ? "text-white/60" : "text-[#64748b]"}`}>/月</span>
                     </>
                   )}
@@ -575,7 +575,7 @@ function Flow() {
               <li key={i} className="relative pl-20 sm:pl-28">
                 <div className="absolute left-0 top-0 w-14 h-14 sm:w-20 sm:h-20 bg-gradient-to-br from-[#15447b] to-[#0a1f3d] rounded-full flex flex-col items-center justify-center text-white shadow-lg ring-4 ring-white">
                   <span className="font-plex-mono text-[8px] tracking-widest opacity-70 leading-none">STEP</span>
-                  <span className="font-display font-black text-[18px] sm:text-[24px] tabular-nums leading-none mt-0.5">{f.n}</span>
+                  <span className="font-plex font-black text-[18px] sm:text-[24px] tabular-nums leading-none mt-0.5">{f.n}</span>
                 </div>
                 <div className="bg-[#f8fafc] border-2 border-[#e2e8f0] rounded-2xl p-5 sm:p-6 hover:border-[#15447b] hover:bg-white transition-all">
                   <div className="flex items-baseline justify-between gap-3 mb-2 flex-wrap">
@@ -735,11 +735,6 @@ function CTA() {
             </button>
             <p className="text-[11px] text-[#94a3b8] text-center">送信後、2営業日以内にご連絡します</p>
           </form>
-        </div>
-
-        <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center text-sm text-blue-200">
-          <a href="tel:080-3777-5996" className="hover:text-white transition-colors">📞 080-3777-5996</a>
-          <a href="mailto:info@gdesign-partners.co.jp" className="hover:text-white transition-colors">✉ info@gdesign-partners.co.jp</a>
         </div>
       </div>
     </section>
