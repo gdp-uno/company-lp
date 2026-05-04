@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   description:
     "中小企業・スタートアップの成長を支援。ブランドパッケージ・DX推進・eラーニング・撮影代行など、ビジネスの課題をワンストップで解決します。大阪市北区拠点。",
   keywords: "ブランディング,DX,業務設計,大阪,スタートアップ,中小企業,ロゴ制作,LP制作",
+  icons: {
+    icon: "/favicon.png",
+  },
   openGraph: {
     type: "website",
     locale: "ja_JP",

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -6,11 +7,15 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center">
-                <span className="text-[#15447b] font-bold text-xs">gdp</span>
-              </div>
-              <span className="font-bold text-sm">Growth Design Partners</span>
+            <div className="mb-3">
+              <Image
+                src="/logo-black.png"
+                alt="Growth Design Partners"
+                width={160}
+                height={41}
+                className="h-7 w-auto"
+                style={{ filter: "invert(1)" }}
+              />
             </div>
             <p className="text-blue-200 text-sm leading-relaxed">
               中小企業・スタートアップの成長を<br />
