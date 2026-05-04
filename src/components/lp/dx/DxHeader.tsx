@@ -24,7 +24,7 @@ export default function DxHeader() {
           alt="Growth Design Partners"
           width={180}
           height={46}
-          className="h-8 w-auto"
+          className="h-10 w-auto"
           priority
         />
         <nav className="hidden lg:flex items-center gap-7 text-[13px] text-[#0a1f3d]/75 font-medium">
