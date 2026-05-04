@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "DX・業務効率化支援 | 定型業務を仕組みに任せて、経営戦略に集中する",
   description:
     "スタートアップ・少人数組織の社長・責任者へ。定型業務をAI×ノーコードで自動化し、月72時間を取り戻します。初回相談30分無料。先着10社限定。",
-  icons: { icon: "/favicon.png" },
+  icons: { icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230a1f3d'/><circle cx='11' cy='16' r='5' fill='none' stroke='%23c9a227' stroke-width='2'/><circle cx='21' cy='16' r='5' fill='none' stroke='white' stroke-width='1.5'/><line x1='21' y1='8' x2='21' y2='24' stroke='white' stroke-width='1.5'/></svg>" },
 };
 
 export default function DxLpLayout({ children }: { children: React.ReactNode }) {
