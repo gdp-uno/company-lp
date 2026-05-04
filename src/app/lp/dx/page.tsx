@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import DxDiagram from "@/components/lp/DxDiagram";
 
 declare global {
   interface Window {
@@ -175,76 +176,120 @@ export default function DxLpPage() {
   return (
     <>
       {/* FV */}
-      <section className="relative bg-[#15447b] text-white overflow-hidden min-h-[90vh] flex items-center">
+      <section className="relative bg-[#15447b] text-white overflow-hidden min-h-screen flex items-center">
         <div
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 15% 60%, #4a85c4 0%, transparent 50%), radial-gradient(circle at 85% 20%, #c9a227 0%, transparent 40%)",
+              "radial-gradient(ellipse at 0% 100%, rgba(74,133,196,0.25) 0%, transparent 55%), radial-gradient(ellipse at 100% 0%, rgba(201,162,39,0.15) 0%, transparent 50%)",
           }}
         />
-        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 py-20">
-          <div className="inline-flex items-center gap-2 bg-[#c9a227]/20 border border-[#c9a227]/40 rounded-full px-4 py-1.5 mb-6 text-sm">
-            <span className="text-[#f0d87a]">★ まずは無料相談：1時間迄＋簡易レポート提出</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
-            <span className="text-[#f0d87a]">Claude Code活用で</span><br />
-            業務を1/3〜1/5に圧縮。<br />
-            <span className="text-blue-100 text-2xl sm:text-3xl">DX・業務効率化を伴走支援します。</span>
-          </h1>
-          <p className="text-blue-100 text-lg leading-relaxed mb-8 max-w-2xl">
-            「何から手をつけるか分からない」「ツールを入れたが定着しない」——
-            そんな企業の業務をヒアリングから自動化構築・内製化支援まで、一気通貫でサポートします。
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 mb-10">
-            <a
-              href="#contact"
-              onClick={() => trackEvent("click_cta_fv", { position: "fv" })}
-              className="inline-block bg-[#c9a227] hover:bg-[#d4b444] text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors text-center"
-            >
-              無料相談を申し込む
-            </a>
-            <a
-              href="#plans"
-              className="inline-block border-2 border-white/60 hover:border-white text-white font-bold px-8 py-4 rounded-lg text-lg transition-colors text-center"
-            >
-              料金プランを見る
-            </a>
-          </div>
-          <div className="grid grid-cols-3 gap-4 max-w-lg">
-            {[
-              { num: "¥200,000〜", label: "スポットプラン" },
-              { num: "¥50,000〜", label: "月額サブスク" },
-              { num: "無料", label: "初回相談+レポート" },
-            ].map((item) => (
-              <div key={item.label} className="text-center">
-                <div className="text-[#f0d87a] font-bold text-lg">{item.num}</div>
-                <div className="text-blue-200 text-xs mt-0.5">{item.label}</div>
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-24 w-full">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+
+            {/* Left: copy */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-[#c9a227]/20 border border-[#c9a227]/50 rounded-full px-4 py-1.5 mb-8 text-sm">
+                <span className="text-[#f0d87a] font-medium">★ 初回相談1時間無料 ＋ 簡易レポート進呈</span>
               </div>
-            ))}
+
+              <h1 className="text-4xl sm:text-5xl font-bold leading-[1.2] mb-5">
+                定型業務は、<br />
+                <span className="text-[#f0d87a]">仕組みに任せて</span><br />
+                ください。
+              </h1>
+
+              <p className="text-blue-100 text-xl font-medium mb-4 leading-relaxed">
+                社長・責任者の時間を、<br className="hidden sm:block" />
+                本質的な経営戦略に取り戻す。
+              </p>
+
+              <p className="text-blue-200 text-sm leading-relaxed mb-8 max-w-md">
+                スタートアップ・少人数組織の社長・責任者は、本来やるべき戦略や営業ではなく、
+                日々の定型業務に時間を奪われています。
+                その仕組みを設計・自動化し、経営に集中できる環境をつくります。
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 mb-10">
+                <a
+                  href="#contact"
+                  onClick={() => trackEvent("click_cta_fv", { position: "fv" })}
+                  className="inline-block bg-[#c9a227] hover:bg-[#d4b444] text-white font-bold px-8 py-4 rounded-lg text-base transition-colors text-center shadow-lg"
+                >
+                  無料で相談してみる
+                </a>
+                <a
+                  href="#plans"
+                  className="inline-block border-2 border-white/40 hover:border-white/80 text-white px-8 py-4 rounded-lg text-base transition-colors text-center"
+                >
+                  料金プランを見る
+                </a>
+              </div>
+
+              <div className="flex flex-wrap gap-6">
+                {[
+                  { num: "¥200,000〜", label: "スポット" },
+                  { num: "¥50,000〜/月", label: "サブスク" },
+                  { num: "初回無料", label: "相談+レポート" },
+                ].map((item) => (
+                  <div key={item.label}>
+                    <div className="text-[#f0d87a] font-bold text-lg">{item.num}</div>
+                    <div className="text-blue-300 text-xs mt-0.5">{item.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: diagram */}
+            <div className="hidden md:flex justify-center">
+              <DxDiagram />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Problem */}
-      <section className="bg-[#f8f9fc] py-20">
+      <section className="bg-white py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-10">
+          <div className="text-center mb-4">
             <p className="text-xs font-bold text-[#15447b] tracking-widest uppercase mb-2">PROBLEM</p>
-            <h2 className="section-title">こんなお悩みを抱えていませんか？</h2>
+            <h2 className="section-title">
+              少人数組織の社長・責任者が<br className="hidden sm:block" />
+              陥りがちな「時間の罠」
+            </h2>
           </div>
+          <p className="text-center text-gray-500 text-sm mb-10">
+            スタートアップや少人数チームほど、一人が複数の役割を担います。<br className="hidden sm:block" />
+            その結果、本来やるべき仕事に集中できない状態が続きます。
+          </p>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              "毎日同じ作業を繰り返していて人手が足りない",
-              "Excelやメールの手作業が多く、ミスが起きやすい",
-              "AIツールを試したが業務に定着させられなかった",
-              "DXを進めたいが、何から始めればいいか分からない",
-              "システムを外注したが使われないまま終わった",
-              "属人化した業務があり、担当者が休むと業務が止まる",
+              { task: "問い合わせ対応", body: "毎日届くメールや問い合わせの返信・振り分けに1〜2時間消える" },
+              { task: "月次集計・報告書", body: "Excelでの手作業集計と報告書作成で月に丸1〜2日かかっている" },
+              { task: "書類・請求書作成", body: "フォーマットがバラバラで、都度作り直す非効率が続いている" },
+              { task: "議事録・記録", body: "会議のたびに誰かが時間を割いて記録・共有しなければならない" },
+              { task: "社内申請・承認", body: "担当者が不在だと承認が止まり、業務全体が滞る" },
+              { task: "本来やりたい仕事", body: "「大事なのは分かっている」のに、戦略・営業・採用に手が回らない", highlight: true },
             ].map((item) => (
-              <div key={item} className="flex gap-3 bg-white rounded-xl p-4 shadow-sm border border-gray-100">
-                <span className="text-red-400 text-lg mt-0.5 flex-shrink-0">！</span>
-                <p className="text-sm text-gray-700 leading-relaxed">{item}</p>
+              <div
+                key={item.task}
+                className={`flex gap-3 rounded-xl p-4 border ${
+                  item.highlight
+                    ? "bg-[#15447b] border-[#15447b] text-white"
+                    : "bg-[#f8f9fc] border-gray-100"
+                }`}
+              >
+                <span className={`text-lg mt-0.5 flex-shrink-0 ${item.highlight ? "text-[#f0d87a]" : "text-red-400"}`}>
+                  {item.highlight ? "→" : "！"}
+                </span>
+                <div>
+                  <p className={`text-sm font-bold mb-0.5 ${item.highlight ? "text-[#f0d87a]" : "text-[#15447b]"}`}>
+                    {item.task}
+                  </p>
+                  <p className={`text-xs leading-relaxed ${item.highlight ? "text-blue-200" : "text-gray-600"}`}>
+                    {item.body}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
