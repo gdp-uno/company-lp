@@ -94,19 +94,19 @@ function FV() {
             <span className="font-display font-bold text-[12px] sm:text-[13px] text-[#15447b]">スタートアップ・少人数組織のためのDX伴走</span>
           </div>
 
-          <h1 className="font-display font-black text-[#0a1f3d] leading-[1.25] tracking-[-0.01em] text-[32px] sm:text-[44px] lg:text-[54px]">
+          <h1 className="font-display font-black text-[#0a1f3d] leading-[1.25] tracking-[-0.01em] text-[32px] sm:text-[44px] lg:text-[46px]">
             定型業務は、<br />
             <Highlight color="#fbbf24">仕組みに任せて</Highlight>ください。
           </h1>
 
           <ul className="mt-7 space-y-3">
             {[
-              "請求・経費・受発注など、定型業務を自動化",
-              "ノーコード × SaaS で初期投資ほぼゼロ",
-              "業務マニュアル一式まで納品、属人化を解消",
+              "AI活用で従来比1/3〜1/5のコスト・工数で業務自動化を実現",
+              "業務フローから逆算した設計で、DX失敗しない仕組みを構築",
+              "現場レクチャー・マニュアル作成まで含む実務伴走型支援",
             ].map((t, i) => (
-              <li key={i} className="flex items-start gap-3 text-[14px] sm:text-[15px] text-[#0a1f3d] font-medium">
-                <span className="shrink-0 w-6 h-6 bg-gradient-to-b from-[#22c55e] to-[#15803d] rounded-full flex items-center justify-center mt-0.5 shadow-sm">
+              <li key={i} className="flex items-center gap-3 text-[14px] sm:text-[15px] text-[#0a1f3d] font-medium">
+                <span className="shrink-0 w-6 h-6 bg-gradient-to-b from-[#22c55e] to-[#15803d] rounded-full flex items-center justify-center shadow-sm">
                   <Ico d={I.check} size={14} className="text-white" />
                 </span>
                 <span>{t}</span>
@@ -131,7 +131,7 @@ function FV() {
           <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] text-[#475569]">
             <div className="flex items-center gap-1.5">
               <Ico d={I.star} size={14} className="text-[#fbbf24] fill-[#fbbf24]" />
-              <span><span className="font-bold text-[#0a1f3d]">12社</span>支援実績</span>
+              <span>AI活用で<span className="font-bold text-[#0a1f3d]">低コスト実現</span></span>
             </div>
             <div className="flex items-center gap-1.5">
               <Ico d={I.shield} size={14} className="text-[#15447b]" />
@@ -151,13 +151,30 @@ function FV() {
             <span className="font-bold text-[10px] sm:text-[11px] mt-1">削減実績!</span>
           </div>
           <div className="relative bg-white border border-[#15447b]/10 p-6 sm:p-8 rounded-2xl shadow-[0_20px_50px_-15px_rgba(21,68,123,0.35)]">
-            <div className="flex items-center justify-between mb-6">
-              <span className="font-display font-bold text-[#0a1f3d] text-[15px] sm:text-[16px]">時間配分シミュレーション</span>
-              <span className="font-plex-mono text-[10px] text-[#15447b] bg-[#e0f2fe] px-2 py-0.5 rounded">DX MODEL</span>
+            <div className="mb-6 pr-20 sm:pr-24">
+              <span className="inline-block font-plex-mono text-[10px] text-[#15447b] bg-[#e0f2fe] px-2 py-0.5 rounded mb-1.5">DX MODEL</span>
+              <div className="font-display font-bold text-[#0a1f3d] text-[15px] sm:text-[16px]">時間配分シミュレーション</div>
             </div>
             <DxDiagram />
+          <div className="mt-4 pt-3 border-t border-[#e2e8f0]">
+            <div className="flex items-center gap-2.5 bg-gradient-to-r from-[#fef9c3] to-[#fff7e6] border border-[#fbbf24] rounded-xl px-4 py-2.5">
+              <div className="w-6 h-6 bg-[#fbbf24] rounded-full flex items-center justify-center shrink-0">
+                <Ico d={I.bolt} size={13} className="text-[#0a1f3d]" />
+              </div>
+              <div className="leading-snug">
+                <div className="text-[11.5px] text-[#0a1f3d]">
+                  <span className="font-black">特典：</span>
+                  <span>生成AI活用カリキュラム</span>
+                </div>
+                <div className="mt-0.5">
+                  <span className="font-black text-[#dc2626] text-[14px]">無料視聴</span>
+                  <span className="text-[11px] text-[#475569]"> つき（月額伴走プラン対象）</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <p className="mt-3 text-center text-[11px] text-[#64748b]">※ 実支援先12社の平均値（2024-2025）</p>
+          </div>
+          <p className="mt-3 text-center text-[11px] text-[#64748b]">※ 業務改善後の時間配分イメージ</p>
         </div>
       </div>
     </section>
@@ -209,12 +226,12 @@ function SeatBar() {
 
 // ── Problem ───────────────────────────────────────────────────────────
 const PROBLEMS = [
-  { icon: I.clock, text: "毎月の請求・経費処理に追われ、戦略を考える時間が取れない" },
-  { icon: I.layers, text: "業務がバラバラのツールに散らばり、全体が見えない" },
-  { icon: I.user, text: "属人化が進み、担当が抜けると業務が止まる" },
-  { icon: I.doc, text: "毎回ゼロから資料を作っていて、知見が蓄積されない" },
-  { icon: I.cog, text: "ツールは入れたが使いこなせず、結局Excelに戻る" },
-  { icon: I.brain, text: "「何から手をつけるべきか」自体が判断できない" },
+  { icon: I.clock, text: "受発注・在庫・請求の手作業集計に毎月3〜4日かかり、月末が地獄になっている" },
+  { icon: I.layers, text: "大手システム会社に相談したら500万円〜と言われ、予算が合わず断念した" },
+  { icon: I.cog, text: "導入したkintone・RPAが現場に定着せず、高い名刺管理ツール状態で放置されている" },
+  { icon: I.chart, text: "社内エンジニアに業務システム開発を依頼するとプロダクト開発が遅れるジレンマ" },
+  { icon: I.user, text: "属人化が進み、ベテランが抜けると業務が止まる恐怖がある" },
+  { icon: I.brain, text: "「何から手をつけるべきか」の判断基準がなく、DXが後回しになっている" },
 ];
 function Problem() {
   return (
@@ -259,6 +276,70 @@ function Problem() {
   );
 }
 
+// ── Target ────────────────────────────────────────────────────────────
+const PERSONA_TYPES = [
+  {
+    title: "アナログ業務に疲弊している経営者の方",
+    pain: "IT人材ゼロ・大手の高額見積もりで断念経験あり",
+    message: "500万円の見積もりに驚いた経験はありませんか。AI活用で従来の1/3以下のコストで、ITが苦手な現場でも使えるまで一緒に走ります。",
+    icon: I.cog,
+  },
+  {
+    title: "過去のDX導入が失敗・放置されている方",
+    pain: "ツールが定着せず、二度目の失敗は許されない",
+    message: "前回のDX導入で失敗した経験はありませんか。今度は業務フローから逆算して、現場が本当に使える仕組みを一緒に作りましょう。",
+    icon: I.layers,
+  },
+  {
+    title: "急成長でバックオフィスが限界の方",
+    pain: "エンジニアリソースをプロダクトに集中させたい",
+    message: "エンジニアリソースをプロダクトに集中させませんか。Claude Code活用で、バックオフィス自動化を従来の1/3の工数・期間で実現します。",
+    icon: I.bolt,
+  },
+];
+
+function Target() {
+  return (
+    <section id="target" className="relative py-16 sm:py-24 bg-gradient-to-b from-[#f0f6fc] to-white">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-8">
+        <Kicker jp="こんな方へ" en="FOR YOU" color="#15447b" />
+        <SectionTitle>
+          こんな方が多く<Highlight>ご相談されています</Highlight>
+        </SectionTitle>
+        <p className="text-center text-[14px] sm:text-[15px] text-[#475569] mt-5 leading-[2] max-w-2xl mx-auto">
+          DXの壁はそれぞれ違います。あなたの状況に近い方をご覧ください。
+        </p>
+        <div className="mt-12 grid md:grid-cols-3 gap-5 sm:gap-6">
+          {PERSONA_TYPES.map((p, i) => (
+            <div key={i} className="bg-white rounded-3xl border-2 border-[#e2e8f0] hover:border-[#15447b] p-7 transition-all hover:shadow-lg flex flex-col">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#15447b] to-[#0a1f3d] rounded-2xl flex items-center justify-center mb-4 shrink-0">
+                <Ico d={p.icon} size={22} className="text-[#fbbf24]" />
+              </div>
+              <h3 className="font-display font-bold text-[#0a1f3d] text-[17px] leading-[1.5] mb-2">{p.title}</h3>
+              <p className="text-[12px] text-[#dc2626] font-bold mb-4 flex items-center gap-1.5">
+                <svg width={12} height={12} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
+                {p.pain}
+              </p>
+              <div className="bg-[#f0f6fc] rounded-xl p-4 border-l-4 border-[#fbbf24] mt-auto">
+                <p className="text-[13px] text-[#0a1f3d] leading-[1.85]">{p.message}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-10 text-center">
+          <a
+            href="#cta"
+            className="group inline-flex items-center gap-3 bg-gradient-to-b from-[#fbbf24] to-[#c9a227] hover:from-[#f0d87a] hover:to-[#fbbf24] text-[#0a1f3d] h-14 px-8 font-black text-[15px] rounded-full shadow-[0_6px_0_#92760e] hover:shadow-[0_3px_0_#92760e] hover:translate-y-[3px] transition-all"
+          >
+            いずれかに当てはまる方、まずは無料相談へ
+            <Ico d={I.arrow} size={16} />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ── Solution ──────────────────────────────────────────────────────────
 function Solution() {
   const steps = [
@@ -286,7 +367,7 @@ function Solution() {
           {steps.map((s, i) => (
             <div key={i} className="relative">
               {i < 2 && (
-                <div className="hidden lg:flex absolute top-[88px] -right-7 z-10 items-center justify-center w-12 h-12 -translate-y-1/2">
+                <div className="hidden lg:flex absolute top-[64px] -right-7 z-10 items-center justify-center w-12 h-12 -translate-y-1/2">
                   <div className="w-12 h-12 bg-[#fbbf24] text-[#0a1f3d] rounded-full flex items-center justify-center shadow-[0_4px_12px_rgba(201,162,39,0.4)] ring-4 ring-white">
                     <Ico d={I.arrow} size={20} />
                   </div>
@@ -342,10 +423,10 @@ function Solution() {
 // ── Why Us ────────────────────────────────────────────────────────────
 function WhyUs() {
   const reasons = [
-    { n: "01", title: "戦略 × 実装、両方できる少数精鋭", desc: "ブランディングコンサルとエンジニアが同じチームに在籍。「絵に描いた餅」で終わらせません。", stat: "12社", statL: "支援実績" },
+    { n: "01", title: "戦略 × 実装、両方できる少数精鋭", desc: "ブランディングコンサルとエンジニアが同じチームに在籍。「絵に描いた餅」で終わらせません。", stat: "納品", statL: "まで一気通貫" },
     { n: "02", title: "大阪拠点 × 全国オンライン対応", desc: "対面でもオンラインでも。関西圏は訪問、それ以外は週次MTGで密に伴走します。", stat: "100%", statL: "リモート可" },
-    { n: "03", title: "ノーコード × SaaSの最小構成主義", desc: "「いきなり開発」はしません。既存SaaS・ノーコードを最大限活かし、初期投資を抑えます。", stat: "¥0", statL: "初期開発費" },
-    { n: "04", title: "属人化させない、納品物の手厚さ", desc: "業務マニュアル・運用ルール・引き継ぎ動画まで。担当が抜けても止まらない仕組みに。", stat: "30+", statL: "ドキュメント" },
+    { n: "03", title: "ノーコード × SaaSの最小構成主義", desc: "「いきなり開発」はしません。既存環境を最大限活かす設計で、ツールへの初期投資を可能な限り抑えます。", stat: "最小化", statL: "初期投資" },
+    { n: "04", title: "属人化させない、納品物の手厚さ", desc: "業務マニュアル・運用ルール・引き継ぎ動画まで。担当が抜けても止まらない仕組みに。", stat: "完備", statL: "引き継ぎ資料" },
     { n: "05", title: "経営者目線の伴走者", desc: "ご支援先の多くが社長直下。「忙しい経営者の代わりに考える」スタンスで提案します。", stat: "1on1", statL: "毎週実施" },
   ];
 
@@ -394,25 +475,25 @@ function Plans() {
     {
       code: "DIAGNOSIS", name: "業務診断", price: "200,000",
       desc: "約0.5ヶ月・15時間。業務棚卸し＆改善ロードマップ。",
-      items: ["業務フロー可視化", "自動化候補リスト", "改善優先度マップ"],
+      items: ["業務ヒアリング & AsIs/ToBe分析", "自動化候補スコアリング", "改善ロードマップ（A4 1枚）"],
     },
     {
       code: "BUILD", name: "仕組み構築", price: "450,000",
       desc: "0.5〜1.0ヶ月・35時間。複数の既存業務を効率化。",
-      items: ["ツール選定・初期設定", "業務マニュアル一式", "1ヶ月の運用フォロー"],
+      items: ["ツール選定・設定・開発", "操作マニュアル一式", "現場レクチャー", "納品後2ヶ月バグ修正無料（2回まで）"],
       featured: true,
     },
     {
       code: "REBUILD", name: "全社DX再設計", price: "900,000",
       desc: "1.5〜2.0ヶ月・75時間。部門・組織全体を再設計。",
-      items: ["全社業務フロー再設計", "5領域のツール構築", "3ヶ月の運用伴走"],
+      items: ["全社業務フロー再設計", "複数領域のツール構築", "3ヶ月の運用伴走", "納品後2ヶ月バグ修正無料（2回まで）"],
     },
   ];
   const subs = [
-    { code: "LIGHT", name: "ライト伴走", price: "50,000", items: ["月1回 戦略MTG", "ツール質問チャット", "月次レポート"] },
-    { code: "STANDARD", name: "スタンダード伴走", price: "120,000", items: ["月2回 戦略MTG", "1業務領域の改善", "ドキュメント更新"], featured: true },
-    { code: "PRO", name: "プロ伴走", price: "300,000", items: ["週1回 戦略MTG", "複数業務の並行改善", "優先サポート"] },
-    { code: "ENTERPRISE", name: "経営パートナー", price: "500,000", items: ["週2回 経営MTG", "全社DX伴走", "専任チーム配置"] },
+    { code: "LIGHT", name: "ライト伴走", price: "50,000", hours: "5h", items: ["月1回 戦略MTG", "ツール質問対応", "月次レポート"] },
+    { code: "STANDARD", name: "スタンダード伴走", price: "120,000", hours: "10h", items: ["月2回 戦略MTG", "1業務領域の改善", "ドキュメント更新"], featured: true },
+    { code: "PRO", name: "プロ伴走", price: "300,000", hours: "30h", items: ["週1回 戦略MTG", "複数業務の並行改善", "優先サポート"] },
+    { code: "ENTERPRISE", name: "経営パートナー", price: "500,000", hours: "50h", items: ["週2回 経営MTG", "全社DX伴走", "専任チーム配置"] },
   ];
 
   return (
@@ -426,10 +507,10 @@ function Plans() {
         </div>
         <Kicker jp="料金プラン" en="PLANS" color="#15447b" />
         <SectionTitle>
-          スポット導入も、月額伴走も。<br className="sm:hidden" />組織に合わせて<Highlight>選べる</Highlight>
+          スポット導入も、月額伴走も。<br />組織に合わせて<Highlight>選べる</Highlight>
         </SectionTitle>
         <p className="text-center text-[14px] sm:text-[15px] text-[#475569] mt-5 leading-[2] max-w-2xl mx-auto">
-          まずは1業務だけスポットで試す。軌道に乗ったら月額伴走で全社展開。段階的にDXを広げられます。
+          まずは1業務だけスポットで試す。軌道に乗ったら月額伴走で全社展開。<br className="hidden sm:block" />段階的にDXを広げられます。
         </p>
 
         {/* Spot */}
@@ -445,7 +526,7 @@ function Plans() {
                 key={s.code}
                 className={`relative rounded-3xl p-7 transition-all ${
                   s.featured
-                    ? "bg-gradient-to-b from-[#fef9c3] to-white border-2 border-[#fbbf24] shadow-[0_20px_50px_-15px_rgba(201,162,39,0.45)] md:scale-[1.04] md:-mt-3"
+                    ? "bg-gradient-to-b from-[#fef9c3] to-white border-2 border-[#fbbf24] shadow-[0_20px_50px_-15px_rgba(201,162,39,0.45)] md:scale-[1.04]"
                     : "bg-white border-2 border-[#e2e8f0] hover:border-[#15447b] shadow-sm"
                 }`}
               >
@@ -462,8 +543,8 @@ function Plans() {
                 </div>
                 <ul className="space-y-2.5 mb-7">
                   {s.items.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-[13px] text-[#0a1f3d]">
-                      <span className="shrink-0 w-5 h-5 bg-[#22c55e] rounded-full flex items-center justify-center mt-0.5">
+                    <li key={f} className="flex items-center gap-2.5 text-[13px] text-[#0a1f3d]">
+                      <span className="shrink-0 w-5 h-5 bg-[#22c55e] rounded-full flex items-center justify-center">
                         <Ico d={I.check} size={12} className="text-white" />
                       </span>
                       <span>{f}</span>
@@ -506,7 +587,10 @@ function Plans() {
                 {s.featured && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#fbbf24] text-[#0a1f3d] px-4 py-1 rounded-full font-display font-black text-[11px] tracking-wider shadow-lg">⭐ 最も人気</div>
                 )}
-                <div className={`font-plex-mono text-[10px] tracking-[0.3em] font-bold mb-3 ${s.featured ? "text-[#fbbf24]" : "text-[#dc2626]"}`}>{s.code}</div>
+                <div className="flex items-center justify-between mb-3">
+                  <div className={`font-plex-mono text-[10px] tracking-[0.3em] font-bold ${s.featured ? "text-[#fbbf24]" : "text-[#dc2626]"}`}>{s.code}</div>
+                  <div className={`font-plex-mono text-[10px] font-bold px-2 py-0.5 rounded ${s.featured ? "bg-white/15 text-white" : "bg-[#f0f6fc] text-[#15447b]"}`}>{s.hours}/月</div>
+                </div>
                 <h3 className={`font-display font-black mb-4 ${s.featured ? "text-white text-[22px]" : "text-[#0a1f3d] text-[18px]"}`}>{s.name}</h3>
                 <div className={`pb-4 mb-5 border-b ${s.featured ? "border-white/15" : "border-[#e2e8f0]"}`}>
                   {s.price === "ASK" ? (
@@ -521,8 +605,8 @@ function Plans() {
                 </div>
                 <ul className="space-y-2.5 mb-6">
                   {s.items.map((f) => (
-                    <li key={f} className={`flex items-start gap-2.5 text-[13px] ${s.featured ? "text-white/90" : "text-[#0a1f3d]"}`}>
-                      <span className={`shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${s.featured ? "bg-[#fbbf24]" : "bg-[#22c55e]"}`}>
+                    <li key={f} className={`flex items-center gap-2.5 text-[13px] ${s.featured ? "text-white/90" : "text-[#0a1f3d]"}`}>
+                      <span className={`shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${s.featured ? "bg-[#fbbf24]" : "bg-[#22c55e]"}`}>
                         <Ico d={I.check} size={12} className={s.featured ? "text-[#0a1f3d]" : "text-white"} />
                       </span>
                       <span>{f}</span>
@@ -544,7 +628,34 @@ function Plans() {
             ))}
           </div>
         </div>
-        <p className="mt-8 text-center text-[11px] text-[#64748b]">※ 表示価格はすべて税抜。最低契約期間：3ヶ月（以降1ヶ月単位で更新）</p>
+        {/* 同時申込割引 */}
+        <div className="mt-10 bg-white border-2 border-[#dc2626]/30 rounded-2xl p-5 sm:p-6 max-w-2xl mx-auto text-center">
+          <div className="font-display font-bold text-[#dc2626] text-[13px] mb-1">スポット＋サブスク 同時申込割引</div>
+          <p className="text-[13px] text-[#475569] leading-[1.85]">
+            スポットプランとサブスクプランを同時にお申込みいただくと、<strong className="text-[#0a1f3d]">¥5,000〜¥80,000割引</strong>（プランの組み合わせによる）
+          </p>
+        </div>
+
+        {/* 全プラン共通特典 */}
+        <div className="mt-6 bg-gradient-to-br from-[#fef9c3] to-[#fff7e6] border-2 border-[#fbbf24] rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-10 h-10 bg-[#fbbf24] rounded-full flex items-center justify-center shrink-0">
+              <Ico d={I.bolt} size={18} className="text-[#0a1f3d]" />
+            </div>
+            <div className="font-display font-black text-[#0a1f3d] text-[18px] sm:text-[20px]">月額伴走プラン共通特典</div>
+          </div>
+          <div className="bg-white rounded-xl border border-[#fbbf24]/50 px-6 py-5 text-center">
+            <div className="font-display font-black text-[#15447b] text-[16px] sm:text-[18px] mb-2">
+              生成AI活用カリキュラムを<span className="text-[#dc2626]">無料視聴</span>
+            </div>
+            <p className="text-[13px] text-[#475569] leading-[1.85]">
+              ChatGPT・Claude などの業務活用ノウハウを体系的に学べるオンライン講座を<br className="hidden sm:block" />
+              ご契約者様限定で無料でご覧いただけます。
+            </p>
+          </div>
+        </div>
+
+        <p className="mt-6 text-center text-[11px] text-[#64748b]">※ 表示価格はすべて税抜。最低契約期間：3ヶ月（以降1ヶ月単位で更新）</p>
       </div>
     </section>
   );
@@ -752,6 +863,7 @@ export default function DxLpPage() {
       <FV />
       <SeatBar />
       <Problem />
+      <Target />
       <Solution />
       <WhyUs />
       <Plans />

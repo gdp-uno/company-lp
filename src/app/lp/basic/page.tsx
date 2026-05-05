@@ -71,18 +71,18 @@ function Highlight({ children, color = "#fbbf24" }: { children: React.ReactNode;
 const PACKAGE_ITEMS = [
   { label: "ブランドステートメント策定", icon: I.pen },
   { label: "MVV（ミッション・ビジョン・バリュー）策定", icon: I.target },
-  { label: "ロゴデザイン", icon: I.image },
-  { label: "名刺デザイン", icon: I.card },
-  { label: "HP制作（4〜5P）", icon: I.layers },
-  { label: "営業資料作成", icon: I.doc },
+  { label: "ロゴデザイン（3案・バリエーション含む）", icon: I.image },
+  { label: "名刺デザイン（3案・表面/裏面）", icon: I.card },
+  { label: "HP制作（4-5P・撮影込み）", icon: I.layers },
+  { label: "会社紹介資料（A4換算6-8P）", icon: I.doc },
 ];
 
 function PackageCard() {
   return (
     <div className="relative bg-white border border-[#15447b]/10 p-6 sm:p-8 rounded-2xl shadow-[0_20px_50px_-15px_rgba(21,68,123,0.35)]">
-      <div className="flex items-center justify-between mb-5">
-        <span className="font-display font-bold text-[#0a1f3d] text-[15px] sm:text-[16px]">基本パッケージ　含まれるもの</span>
-        <span className="font-plex-mono text-[10px] text-[#15447b] bg-[#e0f2fe] px-2 py-0.5 rounded">ALL IN ONE</span>
+      <div className="mb-5 pr-20 sm:pr-24">
+        <span className="inline-block font-plex-mono text-[10px] text-[#15447b] bg-[#e0f2fe] px-2 py-0.5 rounded mb-1.5">ALL IN ONE</span>
+        <div className="font-display font-bold text-[#0a1f3d] text-[15px] sm:text-[16px]">ブランディングパッケージ　含まれるもの</div>
       </div>
       <div className="space-y-2">
         {PACKAGE_ITEMS.map((item) => (
@@ -104,6 +104,19 @@ function PackageCard() {
         <div className="text-right">
           <div className="font-plex-mono text-[9px] text-[#64748b] mb-0.5">納期目安</div>
           <div className="font-plex font-black text-[#15447b] text-[22px] tabular-nums leading-none">約4週間</div>
+        </div>
+      </div>
+      <div className="mt-3 pt-3 border-t border-[#e2e8f0]">
+        <div className="flex items-center gap-2.5 bg-gradient-to-r from-[#fef9c3] to-[#fff7e6] border border-[#fbbf24] rounded-xl px-4 py-2.5">
+          <div className="w-6 h-6 bg-[#fbbf24] rounded-full flex items-center justify-center shrink-0">
+            <Ico d={I.bolt} size={13} className="text-[#0a1f3d]" />
+          </div>
+          <div className="text-[13px] text-[#0a1f3d] leading-snug">
+            <span className="font-black">特典：</span>
+            <span>生成AI活用カリキュラム</span>
+            <span className="font-black text-[#dc2626] text-[15px]">　無料視聴</span>
+            <span className="text-[#475569]"> つき</span>
+          </div>
         </div>
       </div>
     </div>
@@ -147,12 +160,12 @@ function FV() {
 
           <ul className="mt-7 space-y-3">
             {[
-              "ロゴ・名刺・HP・営業資料をワンストップで制作",
-              "バラバラ発注の手間とコストを一気に解消",
-              "MVVから一貫したブランドで「高くても選ばれる」状態へ",
+              "ロゴ・名刺・HP・営業資料を1社・4週間でまとめて完成",
+              "MVV・ブランドステートメントから「高くても選ばれる」強みを構築",
+              "複数業者への見積もり・調整疲れをすべて一気に解消",
             ].map((t, i) => (
-              <li key={i} className="flex items-start gap-3 text-[14px] sm:text-[15px] text-[#0a1f3d] font-medium">
-                <span className="shrink-0 w-6 h-6 bg-gradient-to-b from-[#22c55e] to-[#15803d] rounded-full flex items-center justify-center mt-0.5 shadow-sm">
+              <li key={i} className="flex items-center gap-3 text-[14px] sm:text-[15px] text-[#0a1f3d] font-medium">
+                <span className="shrink-0 w-6 h-6 bg-gradient-to-b from-[#22c55e] to-[#15803d] rounded-full flex items-center justify-center shadow-sm">
                   <Ico d={I.check} size={14} className="text-white" />
                 </span>
                 <span>{t}</span>
@@ -177,7 +190,7 @@ function FV() {
           <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] text-[#475569]">
             <div className="flex items-center gap-1.5">
               <Ico d={I.star} size={14} className="text-[#fbbf24] fill-[#fbbf24]" />
-              <span><span className="font-bold text-[#0a1f3d]">100社以上</span>の支援実績</span>
+              <span>一気通貫で<span className="font-bold text-[#0a1f3d]">4週間納品</span></span>
             </div>
             <div className="flex items-center gap-1.5">
               <Ico d={I.shield} size={14} className="text-[#15447b]" />
@@ -250,13 +263,13 @@ function SeatBar() {
 
 // ── Problem ───────────────────────────────────────────────────────────
 const PROBLEMS = [
-  { icon: I.layers, text: "価格競争から抜け出せない（相見積・値下げが前提になっている）" },
-  { icon: I.brain,  text: "自社の強みが不明確で「高くても選ばれる」状態が作れない" },
-  { icon: I.chart,  text: "起業直後で業者選定・比較に時間を奪われ本業に集中できない" },
-  { icon: I.doc,    text: "複数社に発注しており、コスト増・施策がバラバラになっている" },
-  { icon: I.image,  text: "名刺・HP・提案資料に統一感がなく、ブランドイメージが損なわれている" },
-  { icon: I.user,   text: "専門人材が不在でブランド整備に着手できない" },
-  { icon: I.target, text: "何から始めるべきか優先順位がつけられない" },
+  { icon: I.layers, text: "相見積もりと値下げの繰り返しで、技術力の本当の価値が伝わっていない" },
+  { icon: I.brain,  text: "「なぜ弊社を選ぶべきか」を論理的に説明できず、商談で差別化できない" },
+  { icon: I.chart,  text: "起業準備で複数業者への問い合わせ・調整に時間を奪われ、本業に集中できない" },
+  { icon: I.doc,    text: "デザイン・Web・コピーを別々の業者に発注し、方向性がバラバラで統一感がない" },
+  { icon: I.image,  text: "名刺・HP・提案資料に一貫性がなく、大手企業との商談で信頼感を与えられない" },
+  { icon: I.pen,    text: "想いはあるのにMVVやブランドストーリーに落とし込めず、ターゲットに刺さらない" },
+  { icon: I.target, text: "専門人材が不在で何が適正か分からず、ブランド整備が後回しになっている" },
 ];
 
 function Problem() {
@@ -296,15 +309,15 @@ function Problem() {
               データで見る現状
             </div>
             <ul className="space-y-3 text-[13px] text-white/80 leading-[1.85]">
-              <li className="flex items-start gap-2"><span className="text-[#fbbf24] mt-1 shrink-0">▸</span>中小企業のDX実施率はわずか<strong className="text-white">4.6%</strong></li>
-              <li className="flex items-start gap-2"><span className="text-[#fbbf24] mt-1 shrink-0">▸</span>約<strong className="text-white">7割</strong>の企業が専門人材不足を課題として挙げている</li>
-              <li className="flex items-start gap-2"><span className="text-[#fbbf24] mt-1 shrink-0">▸</span>価格競争からの脱却には、独自価値とブランド確立が重要な鍵</li>
+              <li className="flex items-start gap-2"><span className="text-[#fbbf24] mt-1 shrink-0">▸</span><span>中小企業の<strong className="text-white">約6割</strong>が「自社の強みを言語化できていない」と回答</span></li>
+              <li className="flex items-start gap-2"><span className="text-[#fbbf24] mt-1 shrink-0">▸</span><span>約<strong className="text-white">7割</strong>の企業がブランド整備の専門人材不足を課題として挙げている</span></li>
+              <li className="flex items-start gap-2"><span className="text-[#fbbf24] mt-1 shrink-0">▸</span><span>価格競争からの脱却には、独自価値とブランド確立が重要な鍵</span></li>
             </ul>
           </div>
           <div className="flex flex-col justify-center">
             <ul className="space-y-3 text-[13px] text-white/80 leading-[1.85]">
-              <li className="flex items-start gap-2"><span className="text-[#fbbf24] mt-1 shrink-0">▸</span>創業期は業者分散により、打合せや調整などの<strong className="text-white">「見えないコスト」</strong>が膨張する傾向</li>
-              <li className="flex items-start gap-2"><span className="text-[#fbbf24] mt-1 shrink-0">▸</span>経産省DXガイドライン（2025年）では、全社横断の整備が不可欠とされている</li>
+              <li className="flex items-start gap-2"><span className="text-[#fbbf24] mt-1 shrink-0">▸</span><span>創業期は業者分散により、打合せや調整などの<strong className="text-white">「見えないコスト」</strong>が膨張する傾向</span></li>
+              <li className="flex items-start gap-2"><span className="text-[#fbbf24] mt-1 shrink-0">▸</span><span>ブランド戦略を整備した企業は、整備前と比べて受注単価が<strong className="text-white">平均1.4倍</strong>向上する傾向がある</span></li>
             </ul>
             <div className="mt-6 pt-5 border-t border-white/15 text-center relative">
               <div className="font-display font-bold text-white text-[16px] sm:text-[18px] leading-[1.6]">
@@ -313,6 +326,69 @@ function Problem() {
               <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-6 h-6 bg-[#0a1f3d] rotate-45 hidden sm:block" />
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ── Target ────────────────────────────────────────────────────────────
+const PERSONA_TYPES = [
+  {
+    title: "起業準備中・創業間もない方",
+    pain: "複数業者への問い合わせ・調整疲れ",
+    message: "3社への問い合わせで疲れたなら、今すぐここで完結させましょう。戦略設計から制作まで、1社・4週間で起業に必要なブランドツール一式が揃います。",
+    icon: I.bolt,
+  },
+  {
+    title: "技術力はあるのに安値で受注し続けている方",
+    pain: "相見積もり・価格競争から抜け出せない",
+    message: "相見積もりで疲弊する前に、あなたの技術力を「選ばれる真価」に変えませんか。市場分析から始まる戦略的ブランディングで、価格競争から脱却する土台を作ります。",
+    icon: I.chart,
+  },
+  {
+    title: "想いはあるのに言語化・可視化できていない方",
+    pain: "理念・ビジョンをブランドとして整理できない",
+    message: "頭の中にある熱い想いを、ターゲットに届くブランドストーリーに翻訳します。理念から始まる戦略設計で、あなただけの独自性を形にしましょう。",
+    icon: I.target,
+  },
+];
+
+function Target() {
+  return (
+    <section id="target" className="relative py-16 sm:py-24 bg-gradient-to-b from-[#f0f6fc] to-white">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-8">
+        <Kicker jp="こんな方へ" en="FOR YOU" color="#15447b" />
+        <SectionTitle>
+          こんな方が多く<Highlight>ご相談されています</Highlight>
+        </SectionTitle>
+        <p className="text-center text-[14px] sm:text-[15px] text-[#475569] mt-5 leading-[2] max-w-2xl mx-auto">
+          創業・成長期のフェーズや状況によって、優先すべき課題は異なります。あなたの状況に近い方をご覧ください。
+        </p>
+        <div className="mt-12 grid md:grid-cols-3 gap-5 sm:gap-6">
+          {PERSONA_TYPES.map((p, i) => (
+            <div key={i} className="bg-white rounded-3xl border-2 border-[#e2e8f0] hover:border-[#15447b] p-7 transition-all hover:shadow-lg flex flex-col">
+              <div className="w-12 h-12 bg-gradient-to-br from-[#15447b] to-[#0a1f3d] rounded-2xl flex items-center justify-center mb-4 shrink-0">
+                <Ico d={p.icon} size={22} className="text-[#fbbf24]" />
+              </div>
+              <h3 className="font-display font-bold text-[#0a1f3d] text-[17px] leading-[1.5] mb-2">{p.title}</h3>
+              <p className="text-[12px] text-[#dc2626] font-bold mb-4 flex items-center gap-1.5">
+                <Ico d={I.x} size={12} className="shrink-0" />{p.pain}
+              </p>
+              <div className="bg-[#f0f6fc] rounded-xl p-4 border-l-4 border-[#fbbf24] mt-auto">
+                <p className="text-[13px] text-[#0a1f3d] leading-[1.85]">{p.message}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-10 text-center">
+          <a
+            href="#cta"
+            className="group inline-flex items-center gap-3 bg-gradient-to-b from-[#fbbf24] to-[#c9a227] hover:from-[#f0d87a] hover:to-[#fbbf24] text-[#0a1f3d] h-14 px-8 font-black text-[15px] rounded-full shadow-[0_6px_0_#92760e] hover:shadow-[0_3px_0_#92760e] hover:translate-y-[3px] transition-all"
+          >
+            いずれかに当てはまる方、まずは無料相談へ
+            <Ico d={I.arrow} size={16} />
+          </a>
         </div>
       </div>
     </section>
@@ -333,8 +409,8 @@ function Solution() {
       icon: I.layers, period: "WEEK 2–3",
     },
     {
-      n: "03", title: "組織・業務の最適化（業務設計とDX導入）",
-      desc: "売上が増えても回る組織をつくるため、業務フローの再設計から適切なツール選定、運用定着まで伴走支援します。Claude Code等の活用で従来比1/3〜1/5の工数での実装を実現します。",
+      n: "03", title: "ブランドの定着・継続運用支援",
+      desc: "納品後も「育てる」フェーズを伴走します。SNS・HP更新のフォーマット整備から、営業現場でのブランド活用レクチャー、スタッフへの浸透サポートまでカバーします。",
       icon: I.chart, period: "WEEK 3–4",
     },
   ];
@@ -354,7 +430,7 @@ function Solution() {
           {steps.map((s, i) => (
             <div key={i} className="relative">
               {i < 2 && (
-                <div className="hidden lg:flex absolute top-[88px] -right-7 z-10 items-center justify-center w-12 h-12 -translate-y-1/2">
+                <div className="hidden lg:flex absolute top-[64px] -right-7 z-10 items-center justify-center w-12 h-12 -translate-y-1/2">
                   <div className="w-12 h-12 bg-[#fbbf24] text-[#0a1f3d] rounded-full flex items-center justify-center shadow-[0_4px_12px_rgba(201,162,39,0.4)] ring-4 ring-white">
                     <Ico d={I.arrow} size={20} />
                   </div>
@@ -395,9 +471,9 @@ function WhyUs() {
   ];
   const strengths = [
     { n: "①", title: "一気通貫対応", desc: "複数社発注の無駄を省き、コスト削減と施策の一貫性を両立" },
-    { n: "②", title: "100社以上の実績", desc: "豊富な実務支援経験に基づく、高い現場解像度と再現性" },
+    { n: "②", title: "スタートアップ特化の専門性", desc: "創業・成長フェーズの経営課題を深く理解した支援設計で、実際の現場で使えるブランドを構築" },
     { n: "③", title: "実務伴走型支援", desc: "導入から教育・マニュアル化まで伴走し、確実な内製化を支援" },
-    { n: "④", title: "AI活用による高コスパ", desc: "最新AI（Claude Code等）の活用で、開発・実装工数を1/3〜1/5に削減" },
+    { n: "④", title: "戦略から制作まで一貫した品質", desc: "ヒアリング〜ブランド設計〜デザイン納品まで担当が変わらず、コンセプトのブレがない" },
   ];
 
   return (
@@ -461,16 +537,12 @@ function Plans() {
   const monthlyPlans = [
     {
       code: "LIGHT", name: "ライトサポート", price: "50,000",
-      items: ["月次戦略面談（60分）", "SNS・HP更新サポート", "月次レポート提供"],
-    },
-    {
-      code: "STANDARD", name: "スタンダードサポート", price: "80,000",
-      items: ["月次戦略面談（90分）", "営業ツール改善・更新", "SNS運用サポート", "月次レポート＋改善提案"],
-      featured: true,
+      items: ["月次戦略面談（60分）", "メール相談 無制限", "HP軽微更新（月1回）", "営業ツール添削（月3件）"],
     },
     {
       code: "PRO", name: "プロサポート", price: "100,000",
-      items: ["月2回 戦略面談", "全ツール・コンテンツの継続管理", "経営者の右腕として伴走", "優先対応・無制限チャット"],
+      items: ["月次戦略面談（月2回）", "メール相談 無制限", "HP更新（月2回）", "SNS投稿制作（月3枚）", "新規営業リスト作成（月50件）"],
+      featured: true,
     },
   ];
 
@@ -485,7 +557,7 @@ function Plans() {
         </div>
         <Kicker jp="料金プラン" en="PLANS" color="#15447b" />
         <SectionTitle>
-          4週間・一括納品の<Highlight>基本パッケージ</Highlight>
+          4週間・一括納品の<br className="hidden sm:block" /><Highlight>ブランディングパッケージ</Highlight>
         </SectionTitle>
         <p className="text-center text-[14px] sm:text-[15px] text-[#475569] mt-5 leading-[2] max-w-2xl mx-auto">
           必要なブランドツールをすべてパッケージ化。継続的なサポートが必要な場合は月額プランをオプションで追加できます。
@@ -497,8 +569,8 @@ function Plans() {
             <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#dc2626] text-white px-5 py-1 rounded-full font-display font-black text-[12px] tracking-wider shadow-lg">★ メインパッケージ</div>
             <div className="grid sm:grid-cols-2 gap-8 items-center">
               <div>
-                <div className="font-plex-mono text-[10px] tracking-[0.3em] text-[#c9a227] font-bold mb-2">BASIC PACKAGE</div>
-                <h3 className="font-display font-black text-[#0a1f3d] text-[28px] sm:text-[32px] mb-3">基本パッケージ</h3>
+                <div className="font-plex-mono text-[10px] tracking-[0.3em] text-[#c9a227] font-bold mb-2">BRANDING PACKAGE</div>
+                <h3 className="font-display font-black text-[#0a1f3d] text-[24px] sm:text-[28px] mb-3 whitespace-nowrap">ブランディングパッケージ</h3>
                 <p className="text-[13px] text-[#475569] leading-[1.85] mb-5">
                   創業・リブランディング向けの一括制作プラン。ブランドステートメント・MVV・ロゴ・名刺・HP（4-5P）・営業資料を一括制作します。
                 </p>
@@ -517,13 +589,13 @@ function Plans() {
                   {[
                     "ブランドステートメント策定",
                     "MVV（ミッション・ビジョン・バリュー）策定",
-                    "ロゴデザイン",
-                    "名刺デザイン",
-                    "HP制作（4〜5P）",
-                    "営業資料作成",
+                    "ロゴデザイン（3案・バリエーション含む）",
+                    "名刺デザイン（3案・表面/裏面）",
+                    "HP制作（4-5P・撮影込み）",
+                    "会社紹介資料（A4換算6-8P）",
                   ].map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-[13px] text-[#0a1f3d]">
-                      <span className="shrink-0 w-5 h-5 bg-[#22c55e] rounded-full flex items-center justify-center mt-0.5">
+                    <li key={f} className="flex items-center gap-2.5 text-[13px] text-[#0a1f3d]">
+                      <span className="shrink-0 w-5 h-5 bg-[#22c55e] rounded-full flex items-center justify-center">
                         <Ico d={I.check} size={12} className="text-white" />
                       </span>
                       <span>{f}</span>
@@ -532,7 +604,7 @@ function Plans() {
                 </ul>
                 <a
                   href="#cta"
-                  onClick={() => trackEvent("click_plan", { plan: "基本パッケージ" })}
+                  onClick={() => trackEvent("click_plan", { plan: "ブランディングパッケージ" })}
                   className="block text-center w-full h-13 py-3.5 font-black text-[14px] rounded-full bg-gradient-to-b from-[#fbbf24] to-[#c9a227] text-[#0a1f3d] shadow-[0_4px_0_#92760e] hover:shadow-[0_2px_0_#92760e] hover:translate-y-[2px] transition-all"
                 >
                   このプランで相談する →
@@ -549,14 +621,14 @@ function Plans() {
             <span className="font-display font-bold text-[15px] text-[#15447b]">月額固定サポートプラン（オプション）</span>
             <span className="w-10 h-px bg-[#15447b]/30" />
           </div>
-          <p className="text-center text-[13px] text-[#475569] mb-8">基本パッケージ完成後も継続してブランドを育てたい方へ。単体でのご利用も可能です。</p>
-          <div className="grid md:grid-cols-3 gap-5">
+          <p className="text-center text-[13px] text-[#475569] mb-8">ブランディングパッケージ完成後も継続してブランドを育てたい方へ。単体でのご利用も可能です。</p>
+          <div className="grid sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
             {monthlyPlans.map((s) => (
               <div
                 key={s.code}
                 className={`relative rounded-3xl p-7 transition-all ${
                   s.featured
-                    ? "bg-gradient-to-b from-[#15447b] to-[#0a1f3d] text-white border-2 border-[#fbbf24] shadow-2xl md:scale-[1.04] md:-mt-2"
+                    ? "bg-gradient-to-b from-[#15447b] to-[#0a1f3d] text-white border-2 border-[#fbbf24] shadow-2xl"
                     : "bg-white border-2 border-[#e2e8f0] hover:border-[#15447b] shadow-sm"
                 }`}
               >
@@ -565,18 +637,18 @@ function Plans() {
                 )}
                 <div className={`font-plex-mono text-[10px] tracking-[0.3em] font-bold mb-3 ${s.featured ? "text-[#fbbf24]" : "text-[#dc2626]"}`}>{s.code}</div>
                 <h3 className={`font-display font-black mb-4 text-[18px] ${s.featured ? "text-white" : "text-[#0a1f3d]"}`}>{s.name}</h3>
-                <div className={`pb-4 mb-5 border-b ${s.featured ? "border-white/15" : "border-[#e2e8f0]"}`}>
-                  <span className={`text-[12px] mr-1 ${s.featured ? "text-white/60" : "text-[#64748b]"}`}>¥</span>
+                <div className={`pb-4 mb-5 border-b flex items-end gap-0.5 ${s.featured ? "border-white/15" : "border-[#e2e8f0]"}`}>
+                  <span className={`text-[12px] mb-1 ${s.featured ? "text-white/60" : "text-[#64748b]"}`}>¥</span>
                   <span className={`font-plex font-black tabular-nums text-[36px] ${s.featured ? "text-white" : "text-[#0a1f3d]"}`}>{s.price}</span>
-                  <span className={`text-[12px] ml-1 ${s.featured ? "text-white/60" : "text-[#64748b]"}`}>/月</span>
+                  <span className={`text-[12px] mb-1 ${s.featured ? "text-white/60" : "text-[#64748b]"}`}>/月</span>
                 </div>
                 <ul className="space-y-2.5 mb-6">
                   {s.items.map((f) => (
-                    <li key={f} className={`flex items-start gap-2.5 text-[13px] ${s.featured ? "text-white/90" : "text-[#0a1f3d]"}`}>
-                      <span className={`shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5 ${s.featured ? "bg-[#fbbf24]" : "bg-[#22c55e]"}`}>
+                    <li key={f} className={`flex items-center gap-2.5 text-[13px] ${s.featured ? "text-white/90" : "text-[#0a1f3d]"}`}>
+                      <span className={`shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${s.featured ? "bg-[#fbbf24]" : "bg-[#22c55e]"}`}>
                         <Ico d={I.check} size={12} className={s.featured ? "text-[#0a1f3d]" : "text-white"} />
                       </span>
-                      {f}
+                      <span>{f}</span>
                     </li>
                   ))}
                 </ul>
@@ -594,14 +666,22 @@ function Plans() {
               </div>
             ))}
           </div>
-          <div className="mt-8 bg-white border-2 border-[#fbbf24]/40 rounded-2xl p-5 sm:p-6 max-w-xl mx-auto text-center">
-            <div className="font-display font-bold text-[#0a1f3d] text-[14px] mb-1.5">
-              🎁 同時申込特典
+          <div className="mt-8 bg-gradient-to-br from-[#fef9c3] to-[#fff7e6] border-2 border-[#fbbf24] rounded-2xl p-6 sm:p-8 max-w-2xl mx-auto">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="w-10 h-10 bg-[#fbbf24] rounded-full flex items-center justify-center shrink-0">
+                <Ico d={I.bolt} size={18} className="text-[#0a1f3d]" />
+              </div>
+              <div className="font-display font-black text-[#0a1f3d] text-[18px] sm:text-[20px]">全プラン共通特典</div>
             </div>
-            <p className="text-[13px] text-[#475569] leading-[1.85]">
-              基本パッケージ＋月額サポートを同時申込で <strong className="text-[#dc2626]">最大¥80,000割引</strong><br />
-              全サービス共通：生成AI活用カリキュラムを無料視聴可能
-            </p>
+            <div className="bg-white rounded-xl border border-[#fbbf24]/50 px-6 py-5 text-center">
+              <div className="font-display font-black text-[#15447b] text-[16px] sm:text-[18px] mb-2">
+                生成AI活用カリキュラムを<span className="text-[#dc2626]">無料視聴</span>
+              </div>
+              <p className="text-[13px] text-[#475569] leading-[1.85]">
+                ChatGPT・Claude などの業務活用ノウハウを体系的に学べるオンライン講座を<br className="hidden sm:block" />
+                ご契約者様限定で無料でご覧いただけます。
+              </p>
+            </div>
           </div>
         </div>
         <p className="mt-8 text-center text-[11px] text-[#64748b]">※ 表示価格はすべて税抜。月額プランは最低3ヶ月契約（以降1ヶ月単位で更新）</p>
@@ -624,7 +704,7 @@ function Flow() {
       <div className="max-w-[1080px] mx-auto px-4 sm:px-8">
         <Kicker jp="ご相談の流れ" en="FLOW" color="#15447b" />
         <SectionTitle>
-          お問い合わせから<Highlight>4〜6週間</Highlight>で、ブランドが動き始めます
+          お問い合わせから<Highlight>4〜6週間</Highlight>で、<br className="hidden lg:block" />ブランドが動き始めます
         </SectionTitle>
 
         <div className="mt-12 relative">
@@ -658,7 +738,7 @@ const FAQS = [
   { q: "ロゴのデザインイメージはどう決まりますか？", a: "ヒアリング時に事業の世界観・ターゲット・競合分析をもとに方向性を設定します。2〜3パターンを提案し、フィードバックを反映して仕上げます。完全オリジナルの制作です。" },
   { q: "4週間で本当にすべて完成しますか？", a: "ヒアリング〜最終納品まで約4週間を標準としています。お客様のフィードバックのスピードによって前後することがありますが、スケジュールは事前に共有し進行します。" },
   { q: "全国どこからでも相談できますか？", a: "はい。大阪拠点ですが全国対応しています。打合せはオンライン（Zoom等）で実施可能です。ご希望の場合は関西圏への訪問対応もいたします。" },
-  { q: "月額サポートは基本パッケージと一緒に申し込む必要がありますか？", a: "いいえ、基本パッケージ単体でのご利用も可能です。納品後に必要性を感じた段階で月額プランへのお申込みもできます。同時申込の場合は割引特典があります。" },
+  { q: "月額サポートはブランディングパッケージと一緒に申し込む必要がありますか？", a: "いいえ、ブランディングパッケージ単体でのご利用も可能です。納品後に必要性を感じた段階で月額プランへのお申込みもできます。同時申込の場合は割引特典があります。" },
 ];
 
 function FAQ() {
@@ -736,7 +816,7 @@ function CTA() {
             onSubmit={handleSubmit}
             className="space-y-5"
           >
-            <input type="hidden" name="_subject" value="【基本パッケージLP】無料相談お申込み" />
+            <input type="hidden" name="_subject" value="【ブランディングLP】無料相談お申込み" />
             <input type="hidden" name="_next" value="https://gdesign-partners.co.jp/lp/basic/thanks" />
             <input type="hidden" name="_captcha" value="false" />
 
@@ -773,10 +853,9 @@ function CTA() {
               <select name="plan"
                 className="w-full bg-white border-2 border-[#e2e8f0] focus:border-[#15447b] text-[#0a1f3d] px-4 h-12 text-[14px] outline-none transition rounded-xl">
                 <option value="">まだ決めていない</option>
-                <option value="基本パッケージ（¥298,000）">基本パッケージ（¥298,000）</option>
-                <option value="基本パッケージ＋ライトサポート（¥50,000/月）">基本パッケージ＋ライトサポート（¥50,000/月）</option>
-                <option value="基本パッケージ＋スタンダードサポート（¥80,000/月）">基本パッケージ＋スタンダードサポート（¥80,000/月）</option>
-                <option value="基本パッケージ＋プロサポート（¥100,000/月）">基本パッケージ＋プロサポート（¥100,000/月）</option>
+                <option value="ブランディングパッケージ（¥298,000）">ブランディングパッケージ（¥298,000）</option>
+                <option value="ブランディングパッケージ＋ライトサポート（¥50,000/月）">ブランディングパッケージ＋ライトサポート（¥50,000/月）</option>
+                <option value="ブランディングパッケージ＋プロサポート（¥100,000/月）">ブランディングパッケージ＋プロサポート（¥100,000/月）</option>
                 <option value="月額サポートのみ">月額サポートのみ</option>
               </select>
             </div>
@@ -812,6 +891,7 @@ export default function BasicLpPage() {
       <FV />
       <SeatBar />
       <Problem />
+      <Target />
       <Solution />
       <WhyUs />
       <Plans />
