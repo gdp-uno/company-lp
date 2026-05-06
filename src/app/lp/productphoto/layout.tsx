@@ -13,12 +13,12 @@ export default function ProductphotoLayout({ children }: { children: React.React
   return (
     <>
       {/* Urgency banner */}
-      <div className="fixed top-0 inset-x-0 z-50 bg-[#1A1816] text-white">
+      <div className="fixed top-0 inset-x-0 z-50 bg-[#0a1f3d] text-white">
         <div className="max-w-[1100px] mx-auto px-4 sm:px-8 h-10 flex items-center justify-between text-[12px] sm:text-[13px] gap-3">
           <div className="flex items-center gap-2.5 min-w-0">
-            <span className="bg-[#C4973E] text-[#1A1816] px-2 py-0.5 text-[10px] font-bold tracking-widest shrink-0">先行限定</span>
+            <span className="bg-[#E8602C] text-white px-2 py-0.5 text-[10px] font-bold tracking-widest shrink-0">先行限定</span>
             <span className="text-white/80">初回3社限定 — 専任ディレクター・出張費・レタッチ強化が</span>
-            <span className="font-bold text-[#C4973E]">2ヶ月無料</span>
+            <span className="font-bold text-[#E8602C]">2ヶ月無料</span>
           </div>
           <a href="#contact" className="hidden md:flex items-center gap-1.5 text-[11px] text-white/60 hover:text-white transition shrink-0">
             <span>詳細を見る →</span>
@@ -31,7 +31,7 @@ export default function ProductphotoLayout({ children }: { children: React.React
       {/* pt = banner(40px) + header(64px) */}
       <main className="pt-[104px]">{children}</main>
 
-      <footer className="bg-[#1A1816] py-10">
+      <footer className="bg-[#0a1f3d] py-10">
         <div className="max-w-[1100px] mx-auto px-4 sm:px-8">
           <Link href="/">
             <Image
