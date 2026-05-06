@@ -45,8 +45,8 @@ function FV() {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-8">
         <div className="-mt-10 sm:-mt-16 lg:-mt-24 relative z-10">
           <h1 className="font-display font-black leading-[0.9] tracking-[-0.04em]">
-            <span className="block text-[clamp(4.5rem,11vw,10rem)] text-[#0a1f3d]" style={{ WebkitTextStroke: "3px white", paintOrder: "stroke fill" }}>撮影を、</span>
-            <span className="block text-[clamp(4.5rem,11vw,10rem)] text-[#E8602C]" style={{ WebkitTextStroke: "3px white", paintOrder: "stroke fill" }}>もっと自由に。</span>
+            <span className="block text-[clamp(4.5rem,11vw,10rem)] text-[#0a1f3d]" style={{ WebkitTextStroke: "12px white", paintOrder: "stroke fill" }}>撮影を、</span>
+            <span className="block text-[clamp(4.5rem,11vw,10rem)] text-[#E8602C]" style={{ WebkitTextStroke: "12px white", paintOrder: "stroke fill" }}>もっと自由に。</span>
           </h1>
           <div className="inline-flex items-center gap-3 mt-5">
             <span className="w-6 h-px bg-[#E8602C]" />
