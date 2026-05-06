@@ -44,14 +44,14 @@ function FV() {
       {/* headline overlapping photo strip */}
       <div className="max-w-[1200px] mx-auto px-4 sm:px-8">
         <div className="-mt-10 sm:-mt-16 lg:-mt-24 relative z-10">
-          <div className="inline-flex items-center gap-3 mb-4 bg-white pr-6 py-1">
+          <h1 className="font-display font-black leading-[0.9] tracking-[-0.04em]">
+            <span className="block text-[clamp(4.5rem,11vw,10rem)] text-[#0a1f3d]">撮影を、</span>
+            <span className="block text-[clamp(4.5rem,11vw,10rem)] text-[#E8602C]">もっと自由に。</span>
+          </h1>
+          <div className="inline-flex items-center gap-3 mt-5">
             <span className="w-6 h-px bg-[#E8602C]" />
             <span className="font-plex-mono text-[10px] tracking-[0.4em] text-[#E8602C] font-bold uppercase">Photo Production Service</span>
           </div>
-          <h1 className="font-display font-black leading-[0.9] tracking-[-0.04em]">
-            <span className="block text-[clamp(4.5rem,11vw,10rem)] text-[#0a1f3d] bg-white pr-4 w-fit">撮影を、</span>
-            <span className="block text-[clamp(4.5rem,11vw,10rem)] text-[#E8602C]">もっと自由に。</span>
-          </h1>
         </div>
 
         <div className="mt-10 pb-20 grid lg:grid-cols-[1fr_220px] gap-10 items-end border-b border-[#dce8f2]">
@@ -206,17 +206,36 @@ function Gallery() {
           </p>
         </div>
 
-        {/* creative grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 grid-rows-2 gap-3 auto-rows-[240px]">
-          {photos.map((p, i) => (
-            <div key={p.src} className={`group relative overflow-hidden rounded-2xl bg-[#eef3f8] ${i === 0 ? "row-span-2" : ""}`}>
-              <Image src={p.src} alt={p.alt} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-[#0a1f3d]/0 group-hover:bg-[#0a1f3d]/30 transition-colors duration-300" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                <span className="text-[11px] text-white font-bold bg-[#E8602C] px-2.5 py-1 rounded-full">{p.category}</span>
-              </div>
+        {/* bento grid */}
+        <div className="grid md:grid-cols-12 gap-3">
+          {/* tall left */}
+          <div className="group relative overflow-hidden rounded-2xl bg-[#eef3f8] md:col-span-5" style={{ aspectRatio: "3/4" }}>
+            <Image src={photos[0].src} alt={photos[0].alt} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div className="absolute inset-0 bg-[#0a1f3d]/0 group-hover:bg-[#0a1f3d]/30 transition-colors duration-300" />
+            <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+              <span className="text-[11px] text-white font-bold bg-[#E8602C] px-2.5 py-1 rounded-full">{photos[0].category}</span>
             </div>
-          ))}
+          </div>
+          {/* 2×2 right */}
+          <div className="md:col-span-7 grid grid-cols-2 gap-3">
+            {photos.slice(1, 5).map((p) => (
+              <div key={p.src} className="group relative overflow-hidden rounded-2xl bg-[#eef3f8]" style={{ aspectRatio: "1/1" }}>
+                <Image src={p.src} alt={p.alt} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-[#0a1f3d]/0 group-hover:bg-[#0a1f3d]/30 transition-colors duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="text-[11px] text-white font-bold bg-[#E8602C] px-2.5 py-1 rounded-full">{p.category}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          {/* wide bottom */}
+          <div className="group relative overflow-hidden rounded-2xl bg-[#eef3f8] md:col-span-12" style={{ aspectRatio: "21/6" }}>
+            <Image src={photos[5].src} alt={photos[5].alt} fill className="object-cover object-center group-hover:scale-105 transition-transform duration-500" />
+            <div className="absolute inset-0 bg-[#0a1f3d]/0 group-hover:bg-[#0a1f3d]/30 transition-colors duration-300" />
+            <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+              <span className="text-[11px] text-white font-bold bg-[#E8602C] px-2.5 py-1 rounded-full">{photos[5].category}</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
