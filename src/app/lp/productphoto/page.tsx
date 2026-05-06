@@ -27,76 +27,55 @@ const I = {
 // ── 01 FV ────────────────────────────────────────────────────────────
 function FV() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center bg-[#0a1f3d] overflow-hidden">
-      {/* grid overlay */}
-      <div className="absolute inset-0 pointer-events-none"
-        style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
+      {/* background photo */}
+      <Image
+        src="/images/productphoto/fv-studio.jpg"
+        alt=""
+        fill
+        priority
+        className="object-cover object-right"
+      />
 
-      {/* large background number */}
-      <div className="absolute bottom-[-2rem] left-4 sm:left-12 font-plex-mono font-black text-[20vw] leading-none text-white/[0.03] select-none pointer-events-none">
-        01
-      </div>
+      <div className="relative max-w-[1100px] mx-auto px-4 sm:px-8 w-full pb-16 pt-8">
+        {/* frosted glass text panel */}
+        <div className="relative max-w-[660px] backdrop-blur-md bg-white/75 border border-white/60 rounded-3xl px-10 py-12 shadow-[0_8px_40px_rgba(10,31,61,0.08)]">
 
-      <div className="relative max-w-[1100px] mx-auto px-4 sm:px-8 w-full pb-16 pt-8 grid lg:grid-cols-[1fr_460px] gap-12 items-center">
-        {/* ── left: text ── */}
-        <div>
           {/* eyebrow */}
-          <div className="flex items-center gap-3 mb-10">
+          <div className="flex items-center gap-3 mb-8">
             <span className="w-8 h-px bg-[#E8602C]" />
             <span className="font-plex-mono text-[11px] tracking-[0.4em] text-[#E8602C] font-bold uppercase">Photo Production Service</span>
           </div>
 
           {/* headline */}
-          <h1 className="font-display font-black text-white leading-[1.1] tracking-[-0.03em]">
-            <span className="block text-[clamp(3rem,7vw,6rem)]">撮影を、</span>
-            <span className="block text-[clamp(3rem,7vw,6rem)] text-[#E8602C]">もっと自由に。</span>
+          <h1 className="font-display font-black text-[#0a1f3d] leading-[1.1] tracking-[-0.03em]">
+            <span className="block text-[clamp(3rem,5vw,5rem)]">撮影を、</span>
+            <span className="block text-[clamp(3rem,5vw,5rem)] text-[#E8602C] whitespace-nowrap">もっと自由に。</span>
           </h1>
 
-          <p className="mt-8 text-[15px] sm:text-[17px] text-white/50 font-medium leading-[1.9] max-w-lg">
+          <p className="mt-6 text-[14px] sm:text-[16px] text-[#0a1f3d]/60 font-medium leading-[1.9]">
             月額定額で商品撮影を継続的に。<br />
             アパレルから雑貨まで、EC特化の撮影代行サービス。
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-5">
+          <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="#contact"
               onClick={() => trackEvent("click_cta_fv", { position: "fv" })}
-              className="inline-flex items-center gap-3 bg-[#E8602C] hover:bg-[#ff7240] text-white h-14 px-8 font-bold text-[15px] rounded-full shadow-[0_6px_0_#9c3c15] hover:shadow-[0_3px_0_#9c3c15] hover:translate-y-[3px] transition-all"
+              className="inline-flex items-center gap-3 bg-[#E8602C] hover:bg-[#ff7240] text-white h-13 px-7 font-bold text-[15px] rounded-full shadow-[0_6px_0_#9c3c15] hover:shadow-[0_3px_0_#9c3c15] hover:translate-y-[3px] transition-all"
             >
               無料相談・お見積り
               <Ico d={I.arrow} size={16} />
             </a>
-            <p className="text-[12px] text-white/30">担当者よりご返信いたします</p>
+            <p className="text-[12px] text-[#0a1f3d]/40">担当者よりご返信いたします</p>
           </div>
 
           {/* platform strip */}
-          <div className="mt-16 pt-8 border-t border-white/8 flex flex-wrap items-center gap-x-6 gap-y-2">
-            <span className="font-plex-mono text-[10px] tracking-[0.3em] text-white/25 uppercase">Platforms</span>
-            {["楽天市場", "Amazon", "Yahoo! ショッピング", "Shopify", "BASE", "その他"].map((p) => (
-              <span key={p} className="text-[12px] text-white/35 font-medium">{p}</span>
+          <div className="mt-10 pt-7 border-t border-[#0a1f3d]/8 flex flex-wrap items-center gap-x-5 gap-y-2">
+            <span className="font-plex-mono text-[10px] tracking-[0.3em] text-[#0a1f3d]/30 uppercase">Platforms</span>
+            {["楽天市場", "Amazon", "Yahoo!", "Shopify", "BASE"].map((p) => (
+              <span key={p} className="text-[12px] text-[#0a1f3d]/45 font-medium">{p}</span>
             ))}
-          </div>
-        </div>
-
-        {/* ── right: studio photo ── */}
-        <div className="hidden lg:block relative h-[580px] rounded-2xl overflow-hidden">
-          <Image
-            src="/images/productphoto/studio.jpg"
-            alt="プロフェッショナルな商品撮影スタジオ"
-            fill
-            priority
-            className="object-cover"
-          />
-          {/* subtle gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1f3d]/50 via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1f3d]/30 via-transparent to-transparent" />
-          {/* coral accent line */}
-          <div className="absolute top-6 right-6 w-px h-16 bg-[#E8602C]/60" />
-          <div className="absolute top-6 right-6 w-16 h-px bg-[#E8602C]/60" />
-          {/* caption */}
-          <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between">
-            <span className="font-plex-mono text-[10px] tracking-[0.3em] text-white/40 uppercase">Studio Shot</span>
-            <span className="text-[10px] text-white/25">Photo: Pexels</span>
           </div>
         </div>
       </div>
