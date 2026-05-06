@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 declare global {
   interface Window { gtag?: (...args: unknown[]) => void; }
@@ -31,53 +32,72 @@ function FV() {
       <div className="absolute inset-0 pointer-events-none"
         style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
 
-      {/* coral diagonal accent block */}
-      <div className="absolute right-0 top-0 w-[45vw] h-full hidden lg:block overflow-hidden pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-bl from-[#E8602C]/12 via-transparent to-transparent" />
-        <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-[#E8602C]/40 via-[#E8602C]/10 to-transparent" />
-      </div>
-
       {/* large background number */}
-      <div className="absolute bottom-[-2rem] right-4 sm:right-12 font-plex-mono font-black text-[20vw] leading-none text-white/[0.03] select-none pointer-events-none">
+      <div className="absolute bottom-[-2rem] left-4 sm:left-12 font-plex-mono font-black text-[20vw] leading-none text-white/[0.03] select-none pointer-events-none">
         01
       </div>
 
-      <div className="relative max-w-[1100px] mx-auto px-4 sm:px-8 w-full pb-16 pt-8">
-        {/* eyebrow */}
-        <div className="flex items-center gap-3 mb-10">
-          <span className="w-8 h-px bg-[#E8602C]" />
-          <span className="font-plex-mono text-[11px] tracking-[0.4em] text-[#E8602C] font-bold uppercase">Photo Production Service</span>
+      <div className="relative max-w-[1100px] mx-auto px-4 sm:px-8 w-full pb-16 pt-8 grid lg:grid-cols-[1fr_460px] gap-12 items-center">
+        {/* ── left: text ── */}
+        <div>
+          {/* eyebrow */}
+          <div className="flex items-center gap-3 mb-10">
+            <span className="w-8 h-px bg-[#E8602C]" />
+            <span className="font-plex-mono text-[11px] tracking-[0.4em] text-[#E8602C] font-bold uppercase">Photo Production Service</span>
+          </div>
+
+          {/* headline */}
+          <h1 className="font-display font-black text-white leading-[1.1] tracking-[-0.03em]">
+            <span className="block text-[clamp(3rem,7vw,6rem)]">撮影を、</span>
+            <span className="block text-[clamp(3rem,7vw,6rem)] text-[#E8602C]">もっと自由に。</span>
+          </h1>
+
+          <p className="mt-8 text-[15px] sm:text-[17px] text-white/50 font-medium leading-[1.9] max-w-lg">
+            月額定額で商品撮影を継続的に。<br />
+            アパレルから雑貨まで、EC特化の撮影代行サービス。
+          </p>
+
+          <div className="mt-10 flex flex-wrap items-center gap-5">
+            <a
+              href="#contact"
+              onClick={() => trackEvent("click_cta_fv", { position: "fv" })}
+              className="inline-flex items-center gap-3 bg-[#E8602C] hover:bg-[#ff7240] text-white h-14 px-8 font-bold text-[15px] rounded-full shadow-[0_6px_0_#9c3c15] hover:shadow-[0_3px_0_#9c3c15] hover:translate-y-[3px] transition-all"
+            >
+              無料相談・お見積り
+              <Ico d={I.arrow} size={16} />
+            </a>
+            <p className="text-[12px] text-white/30">担当者よりご返信いたします</p>
+          </div>
+
+          {/* platform strip */}
+          <div className="mt-16 pt-8 border-t border-white/8 flex flex-wrap items-center gap-x-6 gap-y-2">
+            <span className="font-plex-mono text-[10px] tracking-[0.3em] text-white/25 uppercase">Platforms</span>
+            {["楽天市場", "Amazon", "Yahoo! ショッピング", "Shopify", "BASE", "その他"].map((p) => (
+              <span key={p} className="text-[12px] text-white/35 font-medium">{p}</span>
+            ))}
+          </div>
         </div>
 
-        {/* headline */}
-        <h1 className="font-display font-black text-white leading-[1.1] tracking-[-0.03em]">
-          <span className="block text-[clamp(3rem,8vw,7rem)]">撮影を、</span>
-          <span className="block text-[clamp(3rem,8vw,7rem)] text-[#E8602C]">もっと自由に。</span>
-        </h1>
-
-        <p className="mt-8 text-[15px] sm:text-[17px] text-white/50 font-medium leading-[1.9] max-w-lg">
-          月額定額で商品撮影を継続的に。<br />
-          アパレルから雑貨まで、EC特化の撮影代行サービス。
-        </p>
-
-        <div className="mt-10 flex flex-wrap items-center gap-5">
-          <a
-            href="#contact"
-            onClick={() => trackEvent("click_cta_fv", { position: "fv" })}
-            className="inline-flex items-center gap-3 bg-[#E8602C] hover:bg-[#ff7240] text-white h-14 px-8 font-bold text-[15px] rounded-full shadow-[0_6px_0_#9c3c15] hover:shadow-[0_3px_0_#9c3c15] hover:translate-y-[3px] transition-all"
-          >
-            無料相談・お見積り
-            <Ico d={I.arrow} size={16} />
-          </a>
-          <p className="text-[12px] text-white/30">担当者よりご返信いたします</p>
-        </div>
-
-        {/* platform strip */}
-        <div className="mt-16 pt-8 border-t border-white/8 flex flex-wrap items-center gap-x-6 gap-y-2">
-          <span className="font-plex-mono text-[10px] tracking-[0.3em] text-white/25 uppercase">Platforms</span>
-          {["楽天市場", "Amazon", "Yahoo! ショッピング", "Shopify", "BASE", "その他"].map((p) => (
-            <span key={p} className="text-[12px] text-white/35 font-medium">{p}</span>
-          ))}
+        {/* ── right: studio photo ── */}
+        <div className="hidden lg:block relative h-[580px] rounded-2xl overflow-hidden">
+          <Image
+            src="/images/productphoto/studio.jpg"
+            alt="プロフェッショナルな商品撮影スタジオ"
+            fill
+            priority
+            className="object-cover"
+          />
+          {/* subtle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1f3d]/50 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1f3d]/30 via-transparent to-transparent" />
+          {/* coral accent line */}
+          <div className="absolute top-6 right-6 w-px h-16 bg-[#E8602C]/60" />
+          <div className="absolute top-6 right-6 w-16 h-px bg-[#E8602C]/60" />
+          {/* caption */}
+          <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+            <span className="font-plex-mono text-[10px] tracking-[0.3em] text-white/40 uppercase">Studio Shot</span>
+            <span className="text-[10px] text-white/25">Photo: Pexels</span>
+          </div>
         </div>
       </div>
     </section>
@@ -177,6 +197,60 @@ function Features() {
             </div>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+// ── Gallery (Samples) ────────────────────────────────────────────────
+function Gallery() {
+  const photos = [
+    { src: "/images/productphoto/sample1.jpg", alt: "コスメ スタイリング撮影", category: "コスメ" },
+    { src: "/images/productphoto/sample2.jpg", alt: "スキンケア商品撮影", category: "スキンケア" },
+    { src: "/images/productphoto/sample3.jpg", alt: "ビューティー商品撮影", category: "ビューティー" },
+    { src: "/images/productphoto/sample4.jpg", alt: "フラットレイ撮影", category: "フラットレイ" },
+    { src: "/images/productphoto/sample5.jpg", alt: "アパレル撮影", category: "アパレル" },
+    { src: "/images/productphoto/sample6.jpg", alt: "バッグ・アクセサリー撮影", category: "バッグ・小物" },
+  ];
+
+  return (
+    <section className="py-20 sm:py-28 bg-[#0a1f3d] relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none"
+        style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
+
+      <div className="relative max-w-[1100px] mx-auto px-4 sm:px-8">
+        <div className="flex items-center gap-3 mb-10">
+          <span className="w-8 h-px bg-[#E8602C]" />
+          <span className="font-plex-mono text-[11px] tracking-[0.4em] text-[#E8602C] font-bold uppercase">Samples</span>
+        </div>
+
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+          <h2 className="font-display font-black text-white text-[28px] sm:text-[40px] leading-[1.2] tracking-[-0.02em]">
+            撮影サンプル
+          </h2>
+          <p className="text-[13px] text-white/35 max-w-xs leading-relaxed">
+            コスメ・アパレル・雑貨まで幅広いジャンルに対応
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+          {photos.map((p) => (
+            <div key={p.src} className="group relative aspect-[4/3] rounded-xl overflow-hidden border border-white/5">
+              <Image
+                src={p.src}
+                alt={p.alt}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a1f3d]/80 via-[#0a1f3d]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                <span className="text-[11px] text-white font-bold bg-[#E8602C] px-2.5 py-1 rounded-full">{p.category}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <p className="mt-5 text-[10px] text-white/15 text-right">Photo: Pexels（イメージ画像）</p>
       </div>
     </section>
   );
@@ -547,6 +621,7 @@ export default function ProductphotoLpPage() {
       <StatsBar />
       <Problems />
       <Features />
+      <Gallery />
       <Why />
       <Pricing />
       <Flow />
