@@ -81,7 +81,7 @@ function FV() {
             <Ico d={I.bolt} size={14} className="text-[#fbbf24] fill-[#fbbf24]" />
             <span className="font-bold text-[12px] sm:text-[13px] text-[#15447b]">起業準備中・創業直後の方へ</span>
           </div>
-          <h1 className="font-black text-[#0a1f3d] leading-[1.3] tracking-[-0.01em] text-[28px] sm:text-[38px] lg:text-[42px] mb-5">
+          <h1 className="font-black text-[#0a1f3d] leading-[1.3] tracking-[-0.01em] text-[22px] sm:text-[38px] lg:text-[42px] mb-5">
             3社への問い合わせで<br />
             <Highlight color="#fbbf24">疲れたなら</Highlight>、<br />
             今すぐここで完結させましょう。
@@ -112,7 +112,7 @@ function FV() {
           </div>
         </div>
         <div className="relative">
-          <div className="absolute -top-6 -right-3 z-20 w-28 h-28 rounded-full bg-gradient-to-br from-[#15447b] to-[#0a1f3d] text-white flex flex-col items-center justify-center shadow-xl rotate-[8deg] ring-4 ring-white">
+          <div className="hidden lg:flex absolute -top-6 -right-3 z-20 w-28 h-28 rounded-full bg-gradient-to-br from-[#15447b] to-[#0a1f3d] text-white flex-col items-center justify-center shadow-xl rotate-[8deg] ring-4 ring-white">
             <span className="font-black text-[16px] leading-none">最短</span>
             <span className="font-black text-[20px] leading-none text-[#fbbf24]">4週間</span>
             <span className="font-bold text-[10px] mt-0.5">で納品!</span>
@@ -472,8 +472,8 @@ function Flow() {
                   <span className="font-black text-[18px] sm:text-[24px] tabular-nums leading-none mt-0.5">{f.n}</span>
                 </div>
                 <div className="bg-[#f8fafc] border-2 border-[#e2e8f0] rounded-2xl p-5 sm:p-6 hover:border-[#15447b] hover:bg-white transition-all">
-                  <div className="flex items-baseline justify-between gap-3 mb-2 flex-wrap">
-                    <h3 className="font-bold text-[#0a1f3d] text-[16px] sm:text-[18px] leading-[1.5]">{f.title}</h3>
+                  <div className="flex flex-wrap items-start gap-x-3 gap-y-1 mb-2">
+                    <h3 className="font-bold text-[#0a1f3d] text-[14px] sm:text-[18px] leading-[1.5] w-full sm:w-auto">{f.title}</h3>
                     <span className="font-mono text-[10px] tracking-wider text-[#dc2626] font-bold bg-[#fef2f2] px-2 py-0.5 rounded">{f.time}</span>
                   </div>
                   <p className="text-[13.5px] text-[#475569] leading-[1.95]">{f.desc}</p>
@@ -545,8 +545,8 @@ function CTA() {
           <div className="inline-flex items-center gap-2 bg-[#dc2626] text-white px-4 py-1.5 rounded-full mb-5 font-black text-[12px] tracking-wider shadow-lg">
             <Ico d={I.fire} size={14} />今月残り 3社限定！
           </div>
-          <h2 className="font-black text-white text-[28px] sm:text-[40px] leading-[1.3]">
-            まずは <span className="text-[#fbbf24]">30分の無料相談</span> から、<br />はじめませんか？
+          <h2 className="font-black text-white text-[22px] sm:text-[40px] leading-[1.3]">
+            まずは<span className="text-[#fbbf24]">30分の無料相談</span>から、<br />はじめませんか？
           </h2>
           <p className="mt-4 text-[14px] text-white/75 leading-[1.95]">
             2営業日以内にご返信いたします。売り込みは一切ありません。
