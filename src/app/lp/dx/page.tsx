@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useScrollTracking } from "@/lib/useScrollTracking";
 import DxDiagram from "@/components/lp/DxDiagram";
 
 declare global {
@@ -857,6 +858,7 @@ export default function DxLpPage() {
   useEffect(() => {
     trackEvent("page_view_lp_dx", { page: "/lp/dx" });
   }, []);
+  useScrollTracking("lp_dx");
 
   return (
     <>

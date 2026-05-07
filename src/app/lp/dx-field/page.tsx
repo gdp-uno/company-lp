@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useScrollTracking } from "@/lib/useScrollTracking";
 
 declare global { interface Window { gtag?: (...args: unknown[]) => void; } }
 function trackEvent(name: string, params?: Record<string, string>) {
@@ -432,5 +433,6 @@ function CTA() {
 
 export default function DxFieldPage() {
   useEffect(() => { trackEvent("page_view_lp_dx_field", { page: "/lp/dx-field" }); }, []);
+  useScrollTracking("lp_dx_field");
   return <><FV /><SeatBar /><Problem /><Solution /><WhyUs /><Plans /><Flow /><FAQ /><CTA /></>;
 }

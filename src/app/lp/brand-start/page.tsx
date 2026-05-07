@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useScrollTracking } from "@/lib/useScrollTracking";
 
 declare global {
   interface Window { gtag?: (...args: unknown[]) => void; }
@@ -622,6 +623,7 @@ export default function BrandStartPage() {
   useEffect(() => {
     trackEvent("page_view_lp_brand_start", { page: "/lp/brand-start" });
   }, []);
+  useScrollTracking("lp_brand_start");
   return (
     <>
       <FV />
