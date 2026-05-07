@@ -249,10 +249,10 @@ function Solution() {
       <div className="max-w-[1280px] mx-auto px-4 sm:px-8">
         <Kicker jp="解決策" en="SOLUTION" color="#15447b" />
         <SectionTitle>
-          1社・<Highlight>4週間</Highlight>で、起業に必要なブランドがまるごと揃う
+          1社・<Highlight>4週間</Highlight>で、<br className="hidden sm:block" />起業に必要なブランドがまるごと揃う
         </SectionTitle>
         <p className="text-center text-[14px] sm:text-[15px] text-[#475569] mt-5 leading-[2] max-w-2xl mx-auto">
-          戦略設計から制作・納品まで、一気通貫でお任せください。複数業者への問い合わせは今日で終わりです。
+          戦略設計から制作・納品まで、一気通貫でお任せください。<br className="hidden sm:block" />複数業者への問い合わせは今日で終わりです。
         </p>
         <div className="mt-14 grid lg:grid-cols-3 gap-5 lg:gap-8">
           {steps.map((s, i) => (
@@ -358,7 +358,7 @@ function Plans() {
         <Kicker jp="料金プラン" en="PLANS" color="#15447b" />
         <SectionTitle>4週間・一括納品の<br /><Highlight>ブランディングパッケージ</Highlight></SectionTitle>
         <p className="text-center text-[14px] sm:text-[15px] text-[#475569] mt-5 leading-[2] max-w-2xl mx-auto">
-          必要なブランドツールをすべてパッケージ化。継続的なサポートが必要な場合は月額プランを追加できます。
+          必要なブランドツールをすべてパッケージ化。<br className="hidden sm:block" />継続的なサポートが必要な場合は月額プランを追加できます。
         </p>
         <div className="mt-14">
           <div className="relative bg-gradient-to-br from-[#fef9c3] to-white border-2 border-[#fbbf24] rounded-3xl p-8 sm:p-10 shadow-[0_20px_50px_-15px_rgba(201,162,39,0.35)] max-w-3xl mx-auto">
@@ -366,7 +366,7 @@ function Plans() {
             <div className="grid sm:grid-cols-2 gap-8 items-center">
               <div>
                 <div className="font-mono text-[10px] tracking-[0.3em] text-[#c9a227] font-bold mb-2">BRANDING PACKAGE</div>
-                <h3 className="font-black text-[#0a1f3d] text-[24px] sm:text-[28px] mb-3">ブランディングパッケージ</h3>
+                <h3 className="font-black text-[#0a1f3d] text-[24px] sm:text-[28px] mb-3 whitespace-nowrap">ブランディングパッケージ</h3>
                 <p className="text-[13px] text-[#475569] leading-[1.85] mb-5">
                   起業・創業向け一括制作プラン。ブランドステートメント・MVV・ロゴ・名刺・HP・営業資料を一括制作します。
                 </p>

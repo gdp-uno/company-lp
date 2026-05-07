@@ -146,7 +146,7 @@ function Problem() {
         <Kicker jp="お悩み" en="PROBLEM" color="#dc2626" />
         <SectionTitle>価格競争から抜け出せない。<Highlight color="#fecaca">その本当の原因</Highlight>は？</SectionTitle>
         <p className="text-center text-[14px] sm:text-[15px] text-[#475569] mt-5 leading-[2] max-w-2xl mx-auto">
-          技術力も対応力も十分なのに「なぜ選ばれないのか」。その答えは、ブランドの設計にあります。
+          技術力も対応力も十分なのに「なぜ選ばれないのか」。<br className="hidden sm:block" />その答えは、ブランドの設計にあります。
         </p>
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {PROBLEMS.map((p, i) => (
@@ -264,7 +264,7 @@ function Plans() {
             <div className="grid sm:grid-cols-2 gap-8 items-center">
               <div>
                 <div className="font-mono text-[10px] tracking-[0.3em] text-[#c9a227] font-bold mb-2">BRANDING PACKAGE</div>
-                <h3 className="font-black text-[#0a1f3d] text-[24px] sm:text-[28px] mb-3">ブランディングパッケージ</h3>
+                <h3 className="font-black text-[#0a1f3d] text-[24px] sm:text-[28px] mb-3 whitespace-nowrap">ブランディングパッケージ</h3>
                 <p className="text-[13px] text-[#475569] leading-[1.85] mb-5">市場分析・戦略設計込みの一括制作プラン。価格競争から脱却する「選ばれる理由」を根拠から構築します。</p>
                 <div className="pb-5 mb-5 border-b border-[#e2e8f0]">
                   <span className="text-[13px] text-[#64748b] mr-1">¥</span>

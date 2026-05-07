@@ -148,7 +148,7 @@ function Problem() {
         <Kicker jp="お悩み" en="PROBLEM" color="#dc2626" />
         <SectionTitle>想いはある。でも<Highlight color="#fecaca">言葉にならない</Highlight>のはなぜか？</SectionTitle>
         <p className="text-center text-[14px] sm:text-[15px] text-[#475569] mt-5 leading-[2] max-w-2xl mx-auto">
-          ブランディングで一番難しいのは「自分ごと」の言語化です。近すぎて見えない、を一緒に解決します。
+          ブランディングで一番難しいのは「自分ごと」の言語化です。<br className="hidden sm:block" />近すぎて見えない、を一緒に解決します。
         </p>
         <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           {PROBLEMS.map((p, i) => (
@@ -266,7 +266,7 @@ function Plans() {
             <div className="grid sm:grid-cols-2 gap-8 items-center">
               <div>
                 <div className="font-mono text-[10px] tracking-[0.3em] text-[#7c3aed] font-bold mb-2">VISION BRANDING</div>
-                <h3 className="font-black text-[#0a1f3d] text-[24px] sm:text-[28px] mb-3">理念ブランディングパッケージ</h3>
+                <h3 className="font-black text-[#0a1f3d] text-[20px] sm:text-[24px] mb-3 whitespace-nowrap">理念ブランディングパッケージ</h3>
                 <p className="text-[13px] text-[#475569] leading-[1.85] mb-5">MVV策定・ブランドストーリー構築込みの一括制作プラン。「なぜあなたの事業なのか」が伝わるブランドを4週間で構築します。</p>
                 <div className="pb-5 mb-5 border-b border-[#e2e8f0]">
                   <span className="text-[13px] text-[#64748b] mr-1">¥</span>

@@ -151,7 +151,7 @@ function Problem() {
     <section id="problem" className="relative py-16 sm:py-24 bg-white">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-8">
         <Kicker jp="お悩み" en="PROBLEM" color="#dc2626" />
-        <SectionTitle>「DXで失敗した」ではなく、<Highlight color="#fecaca">「設計が合わなかった」</Highlight>だけです</SectionTitle>
+        <SectionTitle>「DXで失敗した」ではなく、<br className="hidden sm:block" /><Highlight color="#fecaca">「設計が合わなかった」</Highlight>だけです</SectionTitle>
         <p className="text-center text-[14px] sm:text-[15px] text-[#475569] mt-5 leading-[2] max-w-2xl mx-auto">
           DXが定着しない理由はツールではなく、業務フローとの設計ミスにあります。
         </p>
