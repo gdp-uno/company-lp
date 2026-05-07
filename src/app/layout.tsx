@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Zen_Kaku_Gothic_New, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import GSAPInit from "@/components/GSAPInit";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -51,6 +52,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${geistSans.variable} ${zenKaku.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable} h-full`}>
       <body className="min-h-full flex flex-col">
+        <GSAPInit />
         {children}
         {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
       </body>
