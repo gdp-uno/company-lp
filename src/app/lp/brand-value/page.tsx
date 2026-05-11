@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useScrollTracking } from "@/lib/useScrollTracking";
+import { getAvailableSeats } from "@/lib/seats";
 
 declare global { interface Window { gtag?: (...args: unknown[]) => void; } }
 function trackEvent(name: string, params?: Record<string, string>) {
@@ -108,6 +109,8 @@ function FV() {
 }
 
 function SeatBar() {
+  const seats = getAvailableSeats();
+  const used = 5 - seats;
   return (
     <section className="bg-[#0a1f3d]">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-8 py-7 grid sm:grid-cols-[auto_1fr_auto] items-center gap-6">
@@ -116,16 +119,19 @@ function SeatBar() {
             <span className="relative flex h-2.5 w-2.5"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e] opacity-75" /><span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#22c55e]" /></span>
             <span className="font-mono text-[10px] tracking-[0.3em] text-[#22c55e] font-bold">LIVE・受付中</span>
           </div>
-          <div className="font-bold text-white text-[18px] sm:text-[20px]">毎月<span className="text-[#fbbf24]"> 4社 </span>限定 <span className="text-white/70 text-[14px] font-medium">/ 1社受付済</span></div>
+          <div className="font-bold text-white text-[18px] sm:text-[20px]">毎月<span className="text-[#fbbf24]"> 5社 </span>限定 <span className="text-white/70 text-[14px] font-medium">/ {used}社受付済</span></div>
         </div>
         <div className="relative h-3 bg-white/10 rounded-full overflow-hidden">
-          <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#fbbf24] to-[#c9a227] rounded-full" style={{ width: "25%" }}>
+          <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#fbbf24] to-[#c9a227] rounded-full" style={{ width: `${Math.round(used / 5 * 100)}%` }}>
             <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-white rounded-full ring-2 ring-[#fbbf24]" />
           </div>
+          {[1, 2, 3, 4].map((i) => (
+            <span key={i} className="absolute top-0 bottom-0 w-px bg-[#0a1f3d]/40" style={{ left: `${i * 20}%` }} />
+          ))}
         </div>
         <div className="text-right border-l border-white/15 pl-6">
           <div className="font-mono text-[10px] tracking-[0.25em] text-[#fbbf24] mb-0.5">今月残り</div>
-          <div className="font-black text-[#fbbf24] text-[48px] sm:text-[56px] tabular-nums leading-none">3<span className="text-lg font-bold text-white/80 ml-1">社</span></div>
+          <div className="font-black text-[#fbbf24] text-[48px] sm:text-[56px] tabular-nums leading-none">{seats}<span className="text-lg font-bold text-white/80 ml-1">社</span></div>
         </div>
       </div>
     </section>
@@ -399,13 +405,14 @@ function FAQ() {
 }
 
 function CTA() {
+  const seats = getAvailableSeats();
   function handleSubmit() { trackEvent("generate_lead", { event_category: "lp_brand_value", event_label: "contact_form_submit" }); }
   return (
     <section id="cta" className="relative py-16 sm:py-24 bg-gradient-to-br from-[#15447b] via-[#0a1f3d] to-[#060d1c] overflow-hidden">
       <div className="absolute inset-0 opacity-15" style={{ backgroundImage: "radial-gradient(circle at 20% 30%, rgba(251,191,36,0.4), transparent 40%), radial-gradient(circle at 80% 70%, rgba(21,68,123,0.5), transparent 40%)" }} />
       <div className="relative max-w-[1080px] mx-auto px-4 sm:px-8">
         <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 bg-[#dc2626] text-white px-4 py-1.5 rounded-full mb-5 font-black text-[12px] tracking-wider shadow-lg"><Ico d={I.fire} size={14} />今月残り 3社限定！</div>
+          <div className="inline-flex items-center gap-2 bg-[#dc2626] text-white px-4 py-1.5 rounded-full mb-5 font-black text-[12px] tracking-wider shadow-lg"><Ico d={I.fire} size={14} />今月残り {seats}社限定！</div>
           <h2 className="font-black text-white text-[22px] sm:text-[40px] leading-[1.3]">まずは<span className="text-[#fbbf24]">30分の無料相談</span>から、<br />はじめませんか？</h2>
           <p className="mt-4 text-[14px] text-white/75 leading-[1.95]">2営業日以内にご返信いたします。売り込みは一切ありません。</p>
         </div>

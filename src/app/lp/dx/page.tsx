@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useScrollTracking } from "@/lib/useScrollTracking";
+import { getAvailableSeats } from "@/lib/seats";
 import DxDiagram from "@/components/lp/DxDiagram";
 
 declare global {
@@ -69,6 +70,7 @@ function Highlight({ children, color = "#fbbf24" }: { children: React.ReactNode;
 
 // ── FV ───────────────────────────────────────────────────────────────
 function FV() {
+  const seats = getAvailableSeats();
   return (
     <section className="relative pt-16 sm:pt-20 pb-16 sm:pb-24 overflow-hidden bg-gradient-to-br from-[#e0f2fe] via-[#f0f6fc] to-[#dbeafe]">
       {/* Decorative bubbles */}
@@ -140,7 +142,7 @@ function FV() {
             </div>
             <div className="flex items-center gap-1.5">
               <Ico d={I.fire} size={14} className="text-[#dc2626]" />
-              <span>残り<span className="font-bold text-[#dc2626]">6社</span>枠</span>
+              <span>今月残り<span className="font-bold text-[#dc2626]">{seats}社</span>枠</span>
             </div>
           </div>
         </div>
@@ -184,6 +186,8 @@ function FV() {
 
 // ── Seat Bar ─────────────────────────────────────────────────────────
 function SeatBar() {
+  const seats = getAvailableSeats();
+  const used = 5 - seats;
   return (
     <section className="bg-[#0a1f3d] relative overflow-hidden">
       <div
@@ -200,24 +204,24 @@ function SeatBar() {
             <span className="font-plex-mono text-[10px] tracking-[0.3em] text-[#22c55e] font-bold">LIVE・受付中</span>
           </div>
           <div className="font-display font-bold text-white text-[18px] sm:text-[20px] leading-tight">
-            年間<span className="text-[#fbbf24] tabular-nums"> 10社 </span>限定
-            <span className="text-white/70 text-[14px] font-medium ml-1">/ 4社契約済</span>
+            毎月<span className="text-[#fbbf24] tabular-nums"> 5社 </span>限定
+            <span className="text-white/70 text-[14px] font-medium ml-1">/ {used}社受付済</span>
           </div>
         </div>
         <div>
           <div className="relative h-3 bg-white/10 rounded-full overflow-hidden">
-            <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#fbbf24] to-[#dc2626] rounded-full" style={{ width: "40%" }}>
+            <div className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#fbbf24] to-[#dc2626] rounded-full" style={{ width: `${Math.round(used / 5 * 100)}%` }}>
               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-white rounded-full shadow-[0_0_16px_#fbbf24] ring-2 ring-[#fbbf24]" />
             </div>
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
-              <span key={i} className="absolute top-0 bottom-0 w-px bg-[#0a1f3d]/40" style={{ left: `${i * 10}%` }} />
+            {[1, 2, 3, 4].map((i) => (
+              <span key={i} className="absolute top-0 bottom-0 w-px bg-[#0a1f3d]/40" style={{ left: `${i * 20}%` }} />
             ))}
           </div>
         </div>
         <div className="text-right border-l border-white/15 pl-6">
-          <div className="font-plex-mono text-[10px] tracking-[0.25em] text-[#fbbf24] mb-0.5">残り</div>
+          <div className="font-plex-mono text-[10px] tracking-[0.25em] text-[#fbbf24] mb-0.5">今月残り</div>
           <div className="font-plex font-black text-[#fbbf24] text-[44px] sm:text-[56px] tabular-nums leading-none drop-shadow-[0_0_24px_rgba(251,191,36,0.4)]">
-            6<span className="text-lg font-bold text-white/80 ml-1">社</span>
+            {seats}<span className="text-lg font-bold text-white/80 ml-1">社</span>
           </div>
         </div>
       </div>
@@ -472,6 +476,7 @@ function WhyUs() {
 
 // ── Plans ─────────────────────────────────────────────────────────────
 function Plans() {
+  const seats = getAvailableSeats();
   const spots = [
     {
       code: "DIAGNOSIS", name: "業務診断", price: "200,000",
@@ -503,7 +508,7 @@ function Plans() {
         <div className="flex justify-center mb-5">
           <div className="inline-flex items-center gap-3 bg-gradient-to-r from-[#dc2626] to-[#ef4444] text-white px-5 py-2 rounded-full shadow-xl border-2 border-white">
             <Ico d={I.fire} size={14} />
-            <span className="font-display font-black text-[12px] tracking-wider">先着10社限定・残り 6社</span>
+            <span className="font-display font-black text-[12px] tracking-wider">毎月5社限定・今月残り {seats}社</span>
           </div>
         </div>
         <Kicker jp="料金プラン" en="PLANS" color="#15447b" />
@@ -760,6 +765,7 @@ function FAQ() {
 
 // ── CTA / Contact ─────────────────────────────────────────────────────
 function CTA() {
+  const seats = getAvailableSeats();
   function handleSubmit() {
     trackEvent("generate_lead", { event_category: "lp_dx", event_label: "contact_form_submit" });
   }
@@ -772,7 +778,7 @@ function CTA() {
       <div className="relative max-w-[1080px] mx-auto px-4 sm:px-8">
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 bg-[#dc2626] text-white px-4 py-1.5 rounded-full mb-5 font-display font-black text-[12px] tracking-wider shadow-lg">
-            <Ico d={I.fire} size={14} />残り 6社限定！
+            <Ico d={I.fire} size={14} />今月残り {seats}社限定！
           </div>
           <h2 className="font-display font-black text-white text-[22px] sm:text-[40px] leading-[1.3]">
             まずは<span className="text-[#fbbf24]">30分の無料相談</span>から、<br />はじめませんか？
